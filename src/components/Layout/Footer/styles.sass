@@ -1,0 +1,74 @@
+@use '../../../styles/util' as *
+
+footer
+    text-align: center
+    padding-bottom: 38px
+
+    .container
+        display: grid
+        justify-items: center
+        gap: 48px
+
+    .accent-bar
+        background-color: var(--color-primary)
+        height: 4px
+        width: 101px
+
+    nav
+        flex-direction: column
+        gap: 48px
+
+        .nav-links
+            @include flex
+            flex-direction: column
+            gap: 16px
+    
+    p
+        opacity: .5
+
+    .copyright
+        font-weight: bold
+    
+    ul.socials
+        @include flex
+        gap: 16px
+
+    @include tablet
+        text-align: initial
+
+        .container
+            justify-items: initial
+            grid-template-columns: 2fr 1fr
+            grid-template-areas: "accent ." "nav ." "about about" "copy social"
+
+            .accent-bar
+                grid-area: accent
+
+            nav
+                grid-area: nav
+
+            .about
+                grid-area: about
+
+            .copyright
+                grid-area: copy
+
+            .socials
+                grid-area: social
+
+        nav
+            display: initial
+
+            .nav-links
+                flex-direction: row
+
+        .socials
+            justify-content: flex-end
+
+    @include desktop
+        .container
+            grid-template-areas: "accent ." "nav nav" "about social" "copy ."
+
+        ul.socials
+            align-items: flex-end
+    

@@ -1,0 +1,43 @@
+@use "../util" as *
+@use "sass:list"
+
+$elements: body h1 h2 overline subtitle h4 button a
+
+:root
+    --text-body: 15px
+    --text-h1: 36px
+    --text-h2: 25px
+    --text-h4: 28px
+    --text-overline: 14px
+    --text-subtitle: 13px
+    --text-button: 13px
+    --text-a: 13px
+
+    --leading-body: 25px
+    --leading-h1: 40px
+    --leading-overline: 19px
+    --leading-subtitle: 25px
+    --leading-a: 25px
+
+    --tracking-h1: 1.29px
+    --tracking-h2: 1px
+    --tracking-h4: 2px
+    --tracking-overline: 10px
+    --tracking-subtitle: 1px
+    --tracking-button: 1px
+    --tracking-a: 2px
+
+
+@each $element in $elements
+    #{$element}
+        font-size: var(--text-#{$element})
+        line-height: var(--leading-#{$element})
+        letter-spacing: var(--tracking-#{$element})
+
+body
+    font-weight: 500
+    font-family: var(--font)
+    color: var(--color-text)
+
+a
+    color: inherit

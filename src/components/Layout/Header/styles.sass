@@ -1,0 +1,29 @@
+@use '../../../styles/util' as *
+
+header
+    @include padding-y(2rem)
+    border-bottom: solid 1px var(--color-border)
+
+    .container
+        @include flex(space-between)
+        gap: 42px
+
+    .nav-links
+        display: none
+
+    @include tablet
+        nav
+            flex-grow: 1
+
+    @include desktop
+        .menu-toggle
+            display: none
+
+        nav
+            gap: 197px
+
+        .nav-links
+            @include flex
+            gap: 34px
+
+

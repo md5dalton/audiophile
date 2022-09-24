@@ -1,0 +1,12 @@
+$breakpoint-tablet: 576px
+$breakpoint-desktop: 1024px
+
+// Medium devices
+@mixin tablet
+   @media (min-width: #{$breakpoint-tablet})
+       @content
+
+// Large devices
+@mixin desktop
+   @media (min-width: #{$breakpoint-desktop})
+       @content

@@ -1,0 +1,5 @@
+*.sketch
+*.fig
+*.xd
+.prettierignore
+node_modules
