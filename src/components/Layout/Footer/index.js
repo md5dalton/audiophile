@@ -15,7 +15,7 @@ export default () => (
                 and sound specialists who are devoted to helping you get the most out of personal audio. Come and 
                 visit our demo facility - we’re open 7 days a week.
             </p>
-            <p className="copyright">Copyright 2021. All Rights Reserved</p>
+            <p className="copyright">Copyright 2022. All Rights Reserved</p>
             <List
                 className="socials"
                 items={["facebook", "twitter", "instagram"]}
