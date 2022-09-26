@@ -1,0 +1,37 @@
+@use "../../../styles/util" as *
+
+.home
+    section
+        @include container-a
+        text-align: center
+        text-align: -webkit-center
+        text-align: -moz-center
+
+    .hero
+        @include padding-y(110px)
+        background-color: var(--color-black)
+        color: var(--color-text)
+        background-image: url("../../../../dist/assets/home/mobile/image-header.jpg")
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center bottom
+
+        overline
+            opacity: .5
+
+        h1
+            text-transform: uppercase
+            margin-top: 16px 
+            margin-bottom: 24px
+
+        p
+            opacity: .75
+
+        button
+            display: grid
+            place-content: center
+            min-height: 48px
+            min-width: 160px
+            background-color: var(--color-primary)
+            color: var(--color-text)
+            margin-top: 28px
