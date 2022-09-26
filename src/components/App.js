@@ -4,10 +4,13 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import Layout from './Layout'
 
 import "./App.sass"
+import Home from './Routes/Home'
 
 const App = () => (
     <Router>
-        <Layout></Layout>
+        <Layout>
+            <Home />
+        </Layout>
     </Router>
 )
 
