@@ -1,3 +1,9 @@
 import React from 'react'
 
-export default ({ name, ...props }) => <img src={`/assets/${name}`} alt={name} {...props} />
+const Img = ({ src, ...props }) => <img src={`/assets/${src}`} {...props} />
+
+Img.defaultProps = {
+    alt: ""
+}
+
+export default Img
