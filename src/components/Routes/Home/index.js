@@ -5,11 +5,9 @@ import { Link } from "react-router-dom"
 import Icon from "../../UI/Icon"
 import Picture from "../../UI/Picture"
 
-const categories = [
-    "headphones",
-    "speakers",
-    "earphones"
-]
+import "./styles.sass"
+
+const categories = ["headphones", "speakers", "earphones"]
 
 export default () => {
 
@@ -37,7 +35,7 @@ export default () => {
     ].map(image => getResponsiveImages("./assets/home", `image-${image}`))
     
     return (
-        <Fragment>
+        <div className="home">
             <section className="hero">
                 <overline>New product</overline>
                 <h1>XX99 Mark II Headphones</h1>
@@ -76,6 +74,6 @@ export default () => {
                     audio equipment.
                 </p>
             </section>
-        </Fragment>
+        </div>
     )
 }
