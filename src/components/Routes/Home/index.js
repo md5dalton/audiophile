@@ -18,14 +18,14 @@ export default () => {
     })
 
     const categoryHandler = category => (
-        <div key={category} className="category">
+        <li key={category} className="category">
             <img src={`./assets/shared/desktop/image-category-thumbnail-${category}.png`} alt="" />
             <div className="name">{category}</div>
             <Link to={`product/${category}`}>
                 <span>shop</span>
                 <Icon name="arrow-right" />
             </Link>
-        </div>
+        </li>
     )
 
     const images = [
