@@ -1,6 +1,11 @@
 @use "../../../styles/util" as *
 
 .home
+    button
+        min-height: 48px
+        min-width: 160px
+        color: var(--color-text)
+    
     section
         @include container-a
         text-align: center
@@ -28,17 +33,60 @@
             opacity: .75
 
         button
-            display: grid
-            place-content: center
-            min-height: 48px
-            min-width: 160px
             background-color: var(--color-primary)
-            color: var(--color-text)
             margin-top: 28px
 
     .categories
         text-transform: uppercase
+        margin-top: 5rem
+
+        ul
+            display: grid
+            gap: 5rem
         
         .category
+            @include padding(22px)
+            border-radius: .5rem
+            background-color: var(--color-light-grey)
+            font-weight: bold
+
             > img
                 height: 104px
+                margin-top: -3.5rem
+
+            a
+                @include flex
+                gap: 13px
+                margin-top: 16px
+                width: fit-content
+
+                span
+                    opacity: .5
+
+    .products
+        margin-top: 120px
+
+        .product
+            &:first-child
+                @include padding(55px 1.5rem)
+                display: grid
+                justify-items: center
+                gap: 1.5rem
+                border-radius: .5rem
+                background-color: var(--color-primary)
+                color: var(--color-text)
+                background-image: url("../../../../dist/assets/home/desktop/pattern-circles.svg")
+                background-position: center -18vh
+                background-size: cover
+                background-repeat: no-repeat
+
+                img
+                    width: 170px
+
+                h1
+                    text-transform: uppercase
+                    width: min-content
+
+                button
+                    background-color: var(--color-black)
+                    color: var(--color-text)
