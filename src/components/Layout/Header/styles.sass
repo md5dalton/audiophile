@@ -1,12 +1,12 @@
 @use '../../../styles/util' as *
 
 header
-    @include padding-y(2rem)
-    border-bottom: solid 1.6px var(--color-border)
 
     .container
+        @include padding-y(2rem)
         @include flex(space-between)
         gap: 42px
+        border-bottom: solid 1.6px var(--color-border)
 
     .nav-links
         display: none
