@@ -5,6 +5,8 @@
         min-height: 48px
         min-width: 160px
         color: var(--color-text)
+        font-weight: bold
+        text-transform: uppercase
     
     section
         @include container-a
@@ -65,14 +67,37 @@
 
     .products
         margin-top: 120px
+        display: grid
+        gap: 24px
 
         .product
+            border-radius: .5rem
+            overflow: hidden
+
+            h4
+                text-transform: uppercase
+                
+            &:last-child, &:nth-child(2)
+                text-align: initial
+                grid-template-columns: 24px 1fr 25px
+                display: grid
+
+                h4, button
+                    grid-column: 2 / 3
+
+                picture
+                    grid-column: 1 / 4
+
+                button
+                    border: solid 1.6px var(--color-black)
+                    color: var(--color-text-dark)
+                    width: fit-content
+
             &:first-child
                 @include padding(55px 1.5rem)
                 display: grid
                 justify-items: center
                 gap: 1.5rem
-                border-radius: .5rem
                 background-color: var(--color-primary)
                 color: var(--color-text)
                 background-image: url("../../../../dist/assets/home/desktop/pattern-circles.svg")
@@ -90,3 +115,35 @@
                 button
                     background-color: var(--color-black)
                     color: var(--color-text)
+
+            &:nth-child(2)
+                grid-template-rows: 100px 38px 32px 48px 100px
+
+                picture
+                    grid-row: 1 / -5
+
+                h4
+                    grid-row: 2 / 3
+
+                button
+                    grid-row: 4 / 5
+
+            &:last-child
+                grid-template-rows: 200px 24px 40px 38px 32px 48px 40px
+
+                &:after, picture, picture img
+                    border-radius: inherit
+
+                &:after
+                    content: ""
+                    display: block
+                    background-color: var(--color-light-grey)
+                    grid-column: 1 / 4
+                    grid-row: 3 / 8
+                    z-index: -1
+
+                h4
+                    grid-row: 4 / 5
+
+                button
+                    grid-row: 6 / 7
