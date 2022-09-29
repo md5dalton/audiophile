@@ -1,6 +1,8 @@
 @use "../../../styles/util" as *
 
 .home
+    padding-bottom: 120px
+
     button
         min-height: 48px
         min-width: 160px
@@ -8,11 +10,17 @@
         font-weight: bold
         text-transform: uppercase
     
+    h4
+        text-transform: uppercase
+
     section
         @include container-a
         text-align: center
         text-align: -webkit-center
         text-align: -moz-center
+
+    .products, .about
+        margin-top: 120px
 
     .hero
         @include padding-y(110px)
@@ -66,16 +74,12 @@
                     opacity: .5
 
     .products
-        margin-top: 120px
         display: grid
         gap: 24px
 
         .product
             border-radius: .5rem
             overflow: hidden
-
-            h4
-                text-transform: uppercase
                 
             &:last-child, &:nth-child(2)
                 text-align: initial
@@ -147,3 +151,20 @@
 
                 button
                     grid-row: 6 / 7
+
+    .about
+        img
+            border-radius: .5rem
+
+        h4
+            margin-top: 40px
+            margin-bottom: 32px
+            line-height: 38px
+
+            span
+                color: var(--color-primary)
+                
+        p
+            opacity: .5
+
+
