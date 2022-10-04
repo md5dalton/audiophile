@@ -1,18 +1,18 @@
+@forward "styles.wide"
 @use "../../../styles/util" as *
 
 .home
     padding-bottom: 120px
 
+    h1, h4, button
+        text-transform: uppercase
+
     button
         min-height: 48px
         min-width: 160px
-        color: var(--color-text)
         font-weight: bold
-        text-transform: uppercase
+        color: var(--color-text)
     
-    h4
-        text-transform: uppercase
-
     section
         @include container-a
         text-align: center
@@ -24,18 +24,17 @@
 
     .hero
         @include padding-y(110px)
-        background-color: var(--color-black)
         color: var(--color-text)
         background-size: cover
         background-repeat: no-repeat
         background-position: center bottom
+        background-color: var(--color-black)
         background-image: url("../../../../dist/assets/home/mobile/image-header.jpg")
 
         overline
             opacity: .5
 
         h1
-            text-transform: uppercase
             margin-top: 16px 
             margin-bottom: 24px
 
@@ -80,24 +79,8 @@
         .product
             border-radius: .5rem
             overflow: hidden
-                
-            &:last-child, &:nth-child(2)
-                text-align: initial
-                grid-template-columns: 24px 1fr 25px
-                display: grid
-
-                h4, button
-                    grid-column: 2 / 3
-
-                picture
-                    grid-column: 1 / 4
-
-                button
-                    border: solid 1.6px var(--color-black)
-                    color: var(--color-text-dark)
-                    width: fit-content
-
-            &:first-child
+          
+            &.primary
                 @include padding(55px 1.5rem)
                 display: grid
                 justify-items: center
@@ -119,38 +102,54 @@
                 button
                     background-color: var(--color-black)
                     color: var(--color-text)
+      
+            &.secondary
+                display: grid
+                text-align: initial
+                grid-template-columns: 24px 1fr 25px
 
-            &:nth-child(2)
-                grid-template-rows: 100px 38px 32px 48px 100px
+                h4, button
+                    grid-column: 2 / 3
 
                 picture
-                    grid-row: 1 / -5
-
-                h4
-                    grid-row: 2 / 3
-
-                button
-                    grid-row: 4 / 5
-
-            &:last-child
-                grid-template-rows: 200px 24px 40px 38px 32px 48px 40px
-
-                &:after, picture, picture img
-                    border-radius: inherit
-
-                &:after
-                    content: ""
-                    display: block
-                    background-color: var(--color-light-grey)
                     grid-column: 1 / 4
-                    grid-row: 3 / 8
-                    z-index: -1
-
-                h4
-                    grid-row: 4 / 5
 
                 button
-                    grid-row: 6 / 7
+                    border: solid 1.6px var(--color-black)
+                    color: var(--color-text-dark)
+                    width: fit-content
+
+                &.colapsed
+                    grid-template-rows: 100px 38px 32px 48px 100px
+
+                    picture
+                        grid-row: 1 / -5
+
+                    h4
+                        grid-row: 2 / 3
+
+                    button
+                        grid-row: 4 / 5
+
+                &.dettached
+                    grid-template-rows: 200px 24px 40px 38px 32px 48px 40px
+
+                    &:after, picture, picture img
+                        border-radius: inherit
+
+                    &:after
+                        content: ""
+                        display: block
+                        background-color: var(--color-light-grey)
+                        grid-column: 1 / 4
+                        grid-row: 3 / 8
+                        z-index: -1
+
+                    h4
+                        grid-row: 4 / 5
+
+                    button
+                        grid-row: 6 / 7
 
     .about
         img
