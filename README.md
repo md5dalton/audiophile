@@ -40,4 +40,34 @@ Your users should be able to:
 
 Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
 
+### Links
+
+- Repository URL: [Github](https://github.com/md5dalton/audiophile)
+- Live Site URL: [Vercel](https://audiophile-fu2d.vercel.app)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Flex
+- [React](https://reactjs.org/) - JS library
+- [Sass](https://sass-lang.com/) - CSS Extension Language
+
+### What I learned
+
+ - CSS Grid
+ - Grid-row, grid-column
+
+### Continued development
+
+ - CSS Grid
+
+## Author
+
+- Github - [Dalton](https://github.com/md5dalton)
+- Frontend Mentor - [@md5dalton](https://www.frontendmentor.io/profile/md5dalton)
+- Twitter - [@md5dalton](https://twitter.com/md5dalton)
+
 **Have fun building!** 🚀
