@@ -46,18 +46,18 @@ export default () => {
                 <List items={categories} itemHandler={categoryHandler} />
             </section>
             <section className="products">
-                <div className="product">
+                <div className="product primary">
                     <Picture {...images[0]} />
                     <h1>ZX9 speaker</h1>
                     <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
                     <Button>See product</Button>
                 </div>
-                <div className="product">
+                <div className="product secondary colapsed">
                     <Picture {...images[1]} />
                     <h4>ZX7 speaker</h4>
                     <Button>See product</Button>
                 </div>
-                <div className="product">
+                <div className="product secondary dettached">
                     <Picture {...images[2]} />
                     <h4>YX1 earphones</h4>
                     <Button>See product</Button>
