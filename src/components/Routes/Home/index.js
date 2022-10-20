@@ -1,37 +1,15 @@
 import React from "react"
 import Button from "../../UI/Button"
-import List from "../../UI/List"
-import { Link } from "react-router-dom"
-import Icon from "../../UI/Icon"
 import Picture from "../../UI/Picture"
 
-import "./styles.sass"
 import Page from "../../Layout/Page"
+import About from "../../Layout/About"
+import CategoriesLinks from "../../Layout/CategoriesLinks"
+import { getResponsiveImages } from "../../../Functions"
 
-const categories = [
-    "headphones", 
-    "speakers", 
-    "earphones"
-]
+import "./styles.sass"
 
 export default () => {
-
-    const getResponsiveImages = (prepend, image) => ({
-        mobile: `${prepend}/mobile/${image}`,
-        tablet: `${prepend}/tablet/${image}`,
-        desktop: `${prepend}/desktop/${image}`
-    })
-
-    const categoryHandler = category => (
-        <li key={category} className="category">
-            <img src={`./assets/shared/desktop/image-category-thumbnail-${category}.png`} alt="" />
-            <div className="name">{category}</div>
-            <Link to={`product/${category}`}>
-                <span>shop</span>
-                <Icon name="arrow-right" />
-            </Link>
-        </li>
-    )
 
     const images = [
         "speaker-zx9.png", 
@@ -52,9 +30,7 @@ export default () => {
     
     return (
         <Page name="home" header={header}>
-            {/* <section className="categories">
-                <List items={categories} itemHandler={categoryHandler} />
-            </section>
+            <CategoriesLinks />
             <section className="products">
                 <div className="product primary">
                     <Picture {...images[0]} />
@@ -73,17 +49,7 @@ export default () => {
                     <Button>See product</Button>
                 </div>
             </section>
-            <section className="about">
-                <Picture {...getResponsiveImages("./assets/shared", "image-best-gear.jpg")} />
-                <h4>Bringing you the <span>best</span> audio gear</h4>
-                <p>
-                    Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
-                    earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
-                    rooms available for you to browse and experience a wide range of our products. Stop by our store 
-                    to meet some of the fantastic people who make Audiophile the best place to buy your portable 
-                    audio equipment.
-                </p>
-            </section> */}
+            <About />
         </Page>
     )
 }
