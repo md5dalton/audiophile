@@ -1,9 +1,11 @@
 @use '../../../styles/util' as *
 
 header
-    background-size: cover
-    background-repeat: no-repeat
-    background-image: url("../../../../dist/assets/home/mobile/image-header.jpg")
+
+    &.home
+        background-size: cover
+        background-repeat: no-repeat
+        background-image: url("../../../../dist/assets/home/mobile/image-header.jpg")
 
     > *
         @include container-a
@@ -21,6 +23,10 @@ header
 
     .nav-links
         display: none
+
+    h4
+        text-transform: uppercase
+        margin: 32px auto
     
     .hero
         margin-top: 110px
@@ -50,7 +56,8 @@ header
             margin-top: 28px
 
     @include tablet
-        background-image: url("../../../../dist/assets/home/tablet/image-header.jpg")
+        &.home
+            background-image: url("../../../../dist/assets/home/tablet/image-header.jpg")
 
         .content
             text-align: initial
