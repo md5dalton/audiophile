@@ -27,6 +27,20 @@ $elements: body h1 h2 overline subtitle h4 button a
     --tracking-button: 1px
     --tracking-a: 2px
 
+    @include tablet
+        --text-h1: 56px
+        --text-h2: 40px
+
+        --leading-h1: 58px
+        --leading-h2: 44px
+        --leading-h3: 36px
+        --leading-h4: 38px
+        --leading-h5: 33px
+        --leading-h6: 24px
+
+        --tracking-h1: 2px
+
+
 
 @each $element in $elements
     #{$element}
