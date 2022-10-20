@@ -1,21 +1,83 @@
 @use '../../../styles/util' as *
 
 header
+    background-size: cover
+    background-repeat: no-repeat
+    background-image: url("../../../../dist/assets/home/mobile/image-header.jpg")
 
-    .container
+    > *
+        @include container-a
+
+    .toolbar
         @include padding-y(2rem)
         @include flex(space-between)
         gap: 42px
         border-bottom: solid 1.6px var(--color-border)
 
+    .content
+        text-align: center
+        text-align: -webkit-center
+        text-align: -moz-center
+
     .nav-links
         display: none
+    
+    .hero
+        margin-top: 110px
+        margin-bottom: 110px
+        // @include padding-y(110px)
+        max-width: 380px
+        
+        button
+            text-transform: uppercase
+            min-height: 48px
+            min-width: 160px
+            font-weight: bold
+            color: var(--color-text)
+
+        overline
+            opacity: .5
+
+        h1
+            margin-top: 16px 
+            margin-bottom: 24px
+
+        p
+            opacity: .75
+
+        button
+            background-color: var(--color-primary)
+            margin-top: 28px
 
     @include tablet
+        background-image: url("../../../../dist/assets/home/tablet/image-header.jpg")
+
+        .content
+            text-align: initial
+
+        .hero
+            margin-top: 125px
+            margin-bottom: 165px
+
+            h1
+                margin-top: 24px 
+
+            p
+                max-width: 350px
+
+            button
+                margin-top: 40px
+
+
         nav
             flex-grow: 1
 
     @include desktop
+        // background-image: url("../../../../dist/assets/home/desktop/image-header.jpg")
+
+        .toolbar
+            @include padding-y(36px)
+
         .menu-toggle
             display: none
 
