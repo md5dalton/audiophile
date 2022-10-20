@@ -5,13 +5,16 @@ import Nav from '../../UI/Nav'
 
 import "./styles.sass"
 
-export default () => {
+export default ({ children, ...props }) => {
     return (
-        <header>
-            <div className="container">
+        <header {...props}>
+            <div className="toolbar">
                 <Button className="menu-toggle"><Icon name="hamburger" /></Button>
                 <Nav />
                 <Button><Icon name="cart" /></Button>
+            </div>
+            <div className="content">
+                {children}
             </div>
         </header>
     )
