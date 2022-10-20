@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import Button from "../../UI/Button"
 import List from "../../UI/List"
 import { Link } from "react-router-dom"
@@ -6,8 +6,13 @@ import Icon from "../../UI/Icon"
 import Picture from "../../UI/Picture"
 
 import "./styles.sass"
+import Page from "../../Layout/Page"
 
-const categories = ["headphones", "speakers", "earphones"]
+const categories = [
+    "headphones", 
+    "speakers", 
+    "earphones"
+]
 
 export default () => {
 
@@ -33,16 +38,21 @@ export default () => {
         "speaker-zx7.jpg", 
         "earphones-yx1.jpg"
     ].map(image => getResponsiveImages("./assets/home", `image-${image}`))
+
+    const header = (
+        <section className="hero">
+            <overline>New product</overline>
+            <h1>XX99 Mark II Headphones</h1>
+            <p>
+                Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
+            </p>
+            <Button>See product</Button>
+        </section>
+    )
     
     return (
-        <div className="home">
-            <section className="hero">
-                <overline>New product</overline>
-                <h1>XX99 Mark II Headphones</h1>
-                <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-                <Button>See product</Button>
-            </section>
-            <section className="categories">
+        <Page name="home" header={header}>
+            {/* <section className="categories">
                 <List items={categories} itemHandler={categoryHandler} />
             </section>
             <section className="products">
@@ -73,7 +83,7 @@ export default () => {
                     to meet some of the fantastic people who make Audiophile the best place to buy your portable 
                     audio equipment.
                 </p>
-            </section>
-        </div>
+            </section> */}
+        </Page>
     )
 }
