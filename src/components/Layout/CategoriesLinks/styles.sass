@@ -1,0 +1,106 @@
+@use "../../../styles/util" as *
+
+.page
+    .categories
+        text-transform: uppercase
+        margin-top: 5rem
+
+        ul
+            display: grid
+            gap: 5rem
+        
+        .category
+            @include padding(22px)
+            border-radius: .5rem
+            background-color: var(--color-light-grey)
+            font-weight: bold
+
+            > img
+                height: 104px
+                margin-top: -3.5rem
+
+            a
+                @include flex
+                gap: 13px
+                margin-top: 16px
+                width: fit-content
+
+                span
+                    opacity: .5
+        display: grid
+        gap: 24px
+
+        .product
+            border-radius: .5rem
+            overflow: hidden
+          
+            &.primary
+                @include padding(55px 1.5rem)
+                display: grid
+                justify-items: center
+                gap: 1.5rem
+                background-color: var(--color-primary)
+                color: var(--color-text)
+                background-image: url("../../../../dist/assets/home/desktop/pattern-circles.svg")
+                background-position: center -18vh
+                background-size: cover
+                background-repeat: no-repeat
+
+                img
+                    width: 170px
+
+                h1
+                    text-transform: uppercase
+                    width: min-content
+
+                button
+                    background-color: var(--color-black)
+                    color: var(--color-text)
+      
+            &.secondary
+                display: grid
+                text-align: initial
+                grid-template-columns: 24px 1fr 25px
+
+                h4, button
+                    grid-column: 2 / 3
+
+                picture
+                    grid-column: 1 / 4
+
+                button
+                    border: solid 1.6px var(--color-black)
+                    color: var(--color-text-dark)
+                    width: fit-content
+
+                &.colapsed
+                    grid-template-rows: 100px 38px 32px 48px 100px
+
+                    picture
+                        grid-row: 1 / -5
+
+                    h4
+                        grid-row: 2 / 3
+
+                    button
+                        grid-row: 4 / 5
+
+                &.dettached
+                    grid-template-rows: 200px 24px 40px 38px 32px 48px 40px
+
+                    &:after, picture, picture img
+                        border-radius: inherit
+
+                    &:after
+                        content: ""
+                        display: block
+                        background-color: var(--color-light-grey)
+                        grid-column: 1 / 4
+                        grid-row: 3 / 8
+                        z-index: -1
+
+                    h4
+                        grid-row: 4 / 5
+
+                    button
+                        grid-row: 6 / 7
