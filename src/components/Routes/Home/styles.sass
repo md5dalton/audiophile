@@ -1,7 +1,7 @@
 @forward "styles.wide"
 @use "../../../styles/util" as *
 
-.home
+.page.home
     padding-bottom: 120px
 
     h1, h4, button
@@ -21,29 +21,6 @@
 
     .products, .about
         margin-top: 120px
-
-    .hero
-        @include padding-y(110px)
-        color: var(--color-text)
-        background-size: cover
-        background-repeat: no-repeat
-        background-position: center bottom
-        background-color: var(--color-black)
-        background-image: url("../../../../dist/assets/home/mobile/image-header.jpg")
-
-        overline
-            opacity: .5
-
-        h1
-            margin-top: 16px 
-            margin-bottom: 24px
-
-        p
-            opacity: .75
-
-        button
-            background-color: var(--color-primary)
-            margin-top: 28px
 
     .categories
         text-transform: uppercase
