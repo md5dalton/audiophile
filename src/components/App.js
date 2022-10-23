@@ -5,11 +5,13 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import "./App.sass"
 import Category from './Routes/Category'
 import Home from './Routes/Home'
+import Product from './Routes/Product'
 
 const App = () => (
     <Router>
         {/* <Home /> */}
-        <Category />
+        {/* <Category /> */}
+        <Product />
     </Router>
 )
 
