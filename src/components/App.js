@@ -1,6 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import "./App.sass"
 import Category from './Routes/Category'
@@ -9,9 +9,11 @@ import Product from './Routes/Product'
 
 const App = () => (
     <Router>
-        {/* <Home /> */}
-        {/* <Category /> */}
-        <Product />
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/c/*" element={<Category />} />
+            <Route path="/p/*" element={<Product />} />
+        </Routes>
     </Router>
 )
 
