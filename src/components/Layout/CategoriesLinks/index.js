@@ -4,6 +4,7 @@ import List from "../../UI/List"
 import Icon from "../../UI/Icon"
 
 import "./styles.sass"
+import { getCategoryItems } from "../../../Functions"
 
 const categories = [
     "headphones", 
@@ -18,11 +19,13 @@ export default () => {
             <img src={`./assets/shared/desktop/image-category-thumbnail-${category}.png`} alt="" />
             <div className="details">
                 <div className="name">{category}</div>
-                <Link to={`product/${category}`}>
+                <Link to="/c" state={{
+                    name: category,
+                    items: getCategoryItems(category)
+                }}>
                     <span>shop</span>
                     <Icon name="arrow-right" />
                 </Link>
-            
             </div>
         </li>
     )
