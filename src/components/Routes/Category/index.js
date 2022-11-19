@@ -1,18 +1,21 @@
 import React from "react"
-import { Link, useLocation } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import List from "../../UI/List"
 import Page from "../../Layout/Page"
 import About from "../../Layout/About"
 import Picture from "../../UI/Picture"
 import CategoriesLinks from "../../Layout/CategoriesLinks"
+import { getCategoryItems } from "../../../Functions"
 
 import "./styles.sass"
 
 export default () => {
 
-    const location = useLocation()
+    const [ searchParams, setSearchParams ] = useSearchParams()
 
-    const { name, items } = location.state
+    const name = searchParams.get("n")
+
+    const items = getCategoryItems(name)
 
     const header = <h4>{name}</h4>
 
