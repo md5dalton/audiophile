@@ -19,10 +19,7 @@ export default () => {
             <img src={`./assets/shared/desktop/image-category-thumbnail-${category}.png`} alt="" />
             <div className="details">
                 <div className="name">{category}</div>
-                <Link to="/c" state={{
-                    name: category,
-                    items: getCategoryItems(category)
-                }}>
+                <Link to={`/c?n=${category}`}>
                     <span>shop</span>
                     <Icon name="arrow-right" />
                 </Link>
