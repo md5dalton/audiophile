@@ -142,36 +142,32 @@ export default () => {
                     </div>
                 </section>
                 <section>
-                    <div className="form-section">
+                    <div className="form-section summary">
                         <h6>summary</h6>
-                        <List
+                        <List className="order-summary"
                             items={cartItems}
                             itemHandler={({ image, name, price, quantity }, index) => (
                                 <li key={index}>
                                     <Picture {...image} />
                                     <div className="details">
-                                        <h4>{name}</h4>
-                                        <h6 className="price">{formatPrice(price)}</h6>
+                                        <div className="name">{name}</div>
+                                        <div className="price">{formatPrice(price)}</div>
                                     </div>
                                     <div className="quantity-counter">x{quantity}</div> 
                                 </li>
                             )}
                         />
-                        <div className="prices">
-                            <List
-                                items={prices}
-                                itemHandler={({ name, value }, index) => (
-                                    <li key={index}>
-                                        <span>{name}</span>
-                                        <span>{formatPrice(value)}</span>
-                                    </li>
-                                )}
-                            />
-                        </div>
+                        <List className="prices"
+                            items={prices}
+                            itemHandler={({ name, value }, index) => (
+                                <li key={index}>
+                                    <span className="name">{name}</span>
+                                    <span className="price">{formatPrice(value)}</span>
+                                </li>
+                            )}
+                        />
+                        <Button className="primary-button">continue & pay</Button>
                     </div>
-                </section>
-                <section>
-                    <Button className="primary-button">continue & pay</Button>
                 </section>
             </form>
         </Page>
