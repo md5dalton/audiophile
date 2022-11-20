@@ -1,9 +1,83 @@
 @use "../../../styles/util" as *
 
-.page.product section.product-detail
-    text-align: initial !important
-    padding-bottom: 120px
-    
-    .product-item
-        .price
-            font-weight: bold
+.page.product 
+    display: grid
+    gap: 120px
+
+    section
+        &.product-detail
+            text-align: initial !important
+            display: grid
+            gap: 88px
+
+            p
+                opacity: .5
+
+            h5
+                text-transform: uppercase
+            
+            .product-item
+                .go-back
+                    text-transform: capitalize
+                    opacity: .5
+                    padding-top: 16px
+                    padding-bottom: 24px
+                    display: block
+
+                .price
+                    font-weight: bold
+
+                form
+                    display: grid
+                    grid-template-columns: 120px auto
+                    gap: 16px
+
+                    .quantity-input
+                        @include padding-x(16px)
+                        display: grid
+                        gap: 20px
+                        grid-template-columns: 16px 16px 16px
+                        background-color: var(--color-light-grey)
+
+                        input
+                            appearance: none
+                            border: none
+                            background-color: transparent
+
+            .features
+                h5
+                    margin-bottom: 24px
+
+            .includes
+                ul
+                    display: grid
+                    gap: 8px
+                    padding-top: 24px
+
+                    li
+                        display: flex
+                        gap: 24px
+
+                    .quantity-counter
+                        color: var(--color-primary)
+                        font-weight: 700
+                    
+        &.gallery ul
+            display: grid
+            gap: 20px
+
+            img
+                border-radius: 8px
+
+        &.related
+            h5
+                text-transform: uppercase
+
+            ul
+                padding-top: 40px
+                display: grid
+                gap: 56px
+
+                li
+                    display: grid
+                    gap: 32px
