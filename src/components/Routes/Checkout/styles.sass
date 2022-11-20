@@ -3,8 +3,9 @@
 .page.checkout 
     display: grid
     gap: 120px
+    padding-bottom: 120px
 
-    h4, subtitle
+    h4, h6, subtitle
         text-transform: uppercase
 
     section
@@ -14,6 +15,10 @@
             padding: 32px 24px
 
     form
+        button.primary-button
+            width: 100%
+            margin-top: 32px
+            
         ul
             display: grid
             
@@ -37,3 +42,46 @@
 
         subtitle
             color: var(--color-primary)
+
+        .summary
+            ul
+                padding-top: 32px
+
+                li
+                    display: flex
+                    align-items: center
+                    gap: 16px
+
+                    .price, .quantity-counter
+                        font-weight: 700
+
+                &.order-summary
+                    gap: 24px
+
+                    img
+                        width: 64px
+                        border-radius: 8px
+
+                    .price, .quantity-counter
+                        opacity: .5
+                        font-size: 14px
+
+                    .details
+                        flex-grow: 1
+
+                        .name
+                            font-weight: 700
+
+                &.prices
+                    gap: 8px
+
+                    li:last-child
+                        margin-top: 16px
+
+                        .price
+                            color: var(--color-primary)
+
+                    .name
+                        flex-grow: 1
+                        text-transform: uppercase
+                        opacity: .5
