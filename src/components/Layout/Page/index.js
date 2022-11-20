@@ -2,6 +2,8 @@ import React, { Fragment } from "react"
 import Footer from "../Footer"
 import Header from "../Header"
 
+import "./styles.sass"
+
 export default ({ name, header, children }) => (
     <Fragment>
         <Header className={name}>
