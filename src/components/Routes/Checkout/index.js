@@ -7,6 +7,7 @@ import Button from "../../UI/Button"
 import { formatPrice, getProduct } from "../../../Functions"
 
 import "./styles.sass"
+import GoBackLink from "../../UI/GoBackLink"
 
 export default () => {
 
@@ -15,15 +16,15 @@ export default () => {
             title: "billing details",
             inputs: [
                 {
-                    label: "name",
+                    label: "Name",
                     placeholder: "pakalitha mosisili"
                 },
                 {
-                    label: "email address",
+                    label: "Email Address",
                     placeholder: "pakalitha@mail.com"
                 },
                 {
-                    label: "phone number",
+                    label: "Phone Number",
                     placeholder: "+266 22316429"
                 }
             ]
@@ -32,20 +33,20 @@ export default () => {
             title: "shipping info",
             inputs: [
                 {
-                    label: "your address",
-                    placeholder: "tsoelike likhalong"
+                    label: "Your Address",
+                    placeholder: "Tsoelike Lekhalong"
                 },
                 {
-                    label: "ZIP code",
+                    label: "ZIP Code",
                     placeholder: "2311"
                 },
                 {
-                    label: "city",
-                    placeholder: "qacha's nek"
+                    label: "City",
+                    placeholder: "Qacha's Nek"
                 },
                 {
-                    label: "country",
-                    placeholder: "lesotho"
+                    label: "Country",
+                    placeholder: "Lesotho"
                 }
             ]
         },
@@ -54,11 +55,11 @@ export default () => {
             inputs: [
                 {
                     label: "e-Money",
-                    type: "checkbox"
+                    type: "radio"
                 },
                 {
                     label: "Cash on Delivery",
-                    type: "checkbox"
+                    type: "radio"
                 },
                 {
                     label: "e-Money Number",
@@ -112,57 +113,65 @@ export default () => {
         <Page name="checkout">
             <form>
                 <section>
-                    <Link className="go-back">go back</Link>
+                    <GoBackLink />
                 </section>
                 <section>
-                    <h4>checkout</h4>
-                    <List className="form-parts"
-                        items={formparts} 
-                        itemHandler={({ title, inputs }, index) => (
-                            <li key={index}>
-                                <div className="sub-title">{title}</div>
-                                <List
-                                    items={inputs}
-                                    itemHandler={({ label, type, placeholder }, index2) => (
-                                        <li key={index2}>
-                                            <label>{label}</label>
-                                            <input type={type} placeholder={placeholder} />
-                                        </li>
-                                    )}
-                                /> 
-                            </li>
-                        )} 
-                    />
-                </section>
-                <section>
-                    <h6>summary</h6>
-                    <List
-                        items={cartItems}
-                        itemHandler={({ image, name, price, quantity }, index) => (
-                            <li key={index}>
-                                <Picture {...image} />
-                                <div className="details">
-                                    <h4>{name}</h4>
-                                    <h6 className="price">{formatPrice(price)}</h6>
-                                </div>
-                                <div className="quantity-counter">x{quantity}</div> 
-                            </li>
-                        )}
-                    />
-                    <div className="prices">
-                        <List
-                            items={prices}
-                            itemHandler={({ name, value }, index) => (
-                                <li key={index}>
-                                    <span>{name}</span>
-                                    <span>{formatPrice(value)}</span>
+                    <div className="form-section">
+                        <h4>checkout</h4>
+                        <List className="fieldsets"
+                            items={formparts} 
+                            itemHandler={({ title, inputs }, index) => (
+                                <li key={index} className="fieldset">
+                                    <subtitle>{title}</subtitle>
+                                    <List className="inputs"
+                                        items={inputs}
+                                        itemHandler={({ label, type, placeholder }, index2) => (
+                                            <li key={index2} className={type}>
+                                                <label>
+                                                    <subtext>{label}</subtext>
+                                                </label>
+                                                <div className="input-wrapper">
+                                                    <input type={type} placeholder={placeholder} />
+                                                </div>
+                                            </li>
+                                        )}
+                                    /> 
                                 </li>
-                            )}
+                            )} 
                         />
                     </div>
                 </section>
                 <section>
-                    <Button>continue & pay</Button>
+                    <div className="form-section">
+                        <h6>summary</h6>
+                        <List
+                            items={cartItems}
+                            itemHandler={({ image, name, price, quantity }, index) => (
+                                <li key={index}>
+                                    <Picture {...image} />
+                                    <div className="details">
+                                        <h4>{name}</h4>
+                                        <h6 className="price">{formatPrice(price)}</h6>
+                                    </div>
+                                    <div className="quantity-counter">x{quantity}</div> 
+                                </li>
+                            )}
+                        />
+                        <div className="prices">
+                            <List
+                                items={prices}
+                                itemHandler={({ name, value }, index) => (
+                                    <li key={index}>
+                                        <span>{name}</span>
+                                        <span>{formatPrice(value)}</span>
+                                    </li>
+                                )}
+                            />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <Button className="primary-button">continue & pay</Button>
                 </section>
             </form>
         </Page>
