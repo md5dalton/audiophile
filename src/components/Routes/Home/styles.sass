@@ -2,11 +2,12 @@
 @use "../../../styles/util" as *
 
 .page.home
+    padding-top: 40px
 
-    h1, h4, button
+    h1, h4, .link-button
         text-transform: uppercase
 
-    button
+    .link-button
         min-height: 48px
         min-width: 160px
         font-weight: bold
@@ -39,7 +40,7 @@
                     text-transform: uppercase
                     width: min-content
 
-                button
+                .link-button
                     background-color: var(--color-black)
                     color: var(--color-text)
       
@@ -48,16 +49,17 @@
                 text-align: initial
                 grid-template-columns: 24px 1fr 25px
 
-                h4, button
+                h4, .link-button
                     grid-column: 2 / 3
 
                 picture
                     grid-column: 1 / 4
 
-                button
+                .link-button
                     border: solid 1.6px var(--color-black)
                     color: var(--color-text-dark)
                     width: fit-content
+                    background-color: transparent
 
                 &.colapsed
                     grid-template-rows: 100px 38px 32px 48px 100px
@@ -68,7 +70,7 @@
                     h4
                         grid-row: 2 / 3
 
-                    button
+                    .link-button
                         grid-row: 4 / 5
 
                 &.dettached
@@ -88,5 +90,5 @@
                     h4
                         grid-row: 4 / 5
 
-                    button
+                    .link-button
                         grid-row: 6 / 7
