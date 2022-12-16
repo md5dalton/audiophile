@@ -1,14 +1,14 @@
-import React, { useContext } from "react"
-import { Link } from "react-router-dom"
+import React, { useContext, useState } from "react"
 import List from "../../UI/List"
 import Page from "../../Layout/Page"
 import Picture from "../../UI/Picture"
 import Button from "../../UI/Button"
-import { formatPrice, getProduct } from "../../../Functions"
-
-import "./styles.sass"
+import { formatPrice } from "../../../Functions"
 import GoBackLink from "../../UI/GoBackLink"
 import CartContext from "../../../context/CartContext"
+import CheckoutModal from "../../Layout/Modals/CheckoutModal"
+
+import "./styles.sass"
 
 export default () => {
 
@@ -95,9 +95,21 @@ export default () => {
         }
     ]
 
+    const [ modalOpen, setModalOpen ] = useState(false)
+
+    const modalToggleHandler = () => setModalOpen(!modalOpen)
+
+    const submitHandler = ev => {
+
+        ev.preventDefault()
+
+        modalToggleHandler()
+
+    }
+
     return (
         <Page name="checkout">
-            <form>
+            <form onSubmit={submitHandler}>
                 <section>
                     <GoBackLink />
                 </section>
@@ -152,10 +164,11 @@ export default () => {
                                 </li>
                             )}
                         />
-                        <Button className="primary-button" onClick={()=>1} onSubmit={()=>1}>continue & pay</Button>
+                        <Button className="primary-button">continue & pay</Button>
                     </div>
                 </section>
             </form>
+            <CheckoutModal isOpen={modalOpen} toggleHandler={modalToggleHandler} />
         </Page>
     )
 }
