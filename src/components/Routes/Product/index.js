@@ -7,6 +7,7 @@ import Picture from "../../UI/Picture"
 import CategoriesLinks from "../../Layout/CategoriesLinks"
 import { getProduct } from "../../../Functions"
 import Button from "../../UI/Button"
+import CounterInput from "../../UI/CounterInput"
 
 import "./styles.sass"
 
@@ -20,8 +21,6 @@ export default () => {
         image, new: isNew, name, description, slug, price, features, includes, gallery, others
     } = product
     
-    console.log(product)
-
     return (
         <Page name="product">
             <section className="product-detail">
@@ -34,11 +33,7 @@ export default () => {
                         <p>{description}</p>
                         <h6 className="price">$ {Intl.NumberFormat("en-US").format(price)}</h6>
                         <form>
-                            <div className="quantity-input">
-                                <Button>-</Button>
-                                <input type="number" defaultValue={1} />
-                                <Button>+</Button>
-                            </div>
+                            <CounterInput />
                             <Button className="primary-button">add to cart</Button>
                         </form>
                     </div>
