@@ -3,7 +3,7 @@ import List from "../../UI/List"
 import Page from "../../Layout/Page"
 import Picture from "../../UI/Picture"
 import Button from "../../UI/Button"
-import { formatPrice } from "../../../Functions"
+import { formatPrice, getProducts } from "../../../Functions"
 import GoBackLink from "../../UI/GoBackLink"
 import CartContext from "../../../context/CartContext"
 import CheckoutModal from "../../Layout/Modals/CheckoutModal"
@@ -74,24 +74,32 @@ export default () => {
         }
     ]
 
-    const { products } = useContext(CartContext)
+    const { cart, getTotalPrice } = useContext(CartContext)
+
+    const products = getProducts(cart)
+
+    const totalPrice = getTotalPrice()
+    const shipping = 50
+    const VAT = 1.15 * totalPrice
+    const grandTotal = shipping + VAT
+
 
     const prices = [
         {
             name: "total",
-            value: 5396
+            value: totalPrice
         },
         {
             name: "shipping",
-            value: 50
+            value: shipping
         },
         {
-            name: "val (included)",
-            value: 1079
+            name: "vat (included)",
+            value: VAT
         },
         {
             name: "grand total",
-            value: 5446
+            value: grandTotal
         }
     ]
 
@@ -168,7 +176,7 @@ export default () => {
                     </div>
                 </section>
             </form>
-            <CheckoutModal isOpen={modalOpen} toggleHandler={modalToggleHandler} />
+            <CheckoutModal isOpen={modalOpen} toggleHandler={modalToggleHandler} grandTotal={grandTotal} />
         </Page>
     )
 }
