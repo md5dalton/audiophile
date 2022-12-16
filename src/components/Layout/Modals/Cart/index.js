@@ -12,7 +12,7 @@ import "./styles.sass"
 export default ({ ...props }) => {
 
     const { cart, addCart, clearCart, getTotalPrice } = useContext(CartContext)
-
+    
     const products = getProducts(cart)
     
     return (
