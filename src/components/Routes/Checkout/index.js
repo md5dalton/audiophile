@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import List from "../../UI/List"
 import Page from "../../Layout/Page"
@@ -8,6 +8,7 @@ import { formatPrice, getProduct } from "../../../Functions"
 
 import "./styles.sass"
 import GoBackLink from "../../UI/GoBackLink"
+import CartContext from "../../../context/CartContext"
 
 export default () => {
 
@@ -73,22 +74,7 @@ export default () => {
         }
     ]
 
-    const cart = [
-        {
-            slug: "yx1-earphones",
-            quantity: 1
-        },
-        {
-            slug: "xx99-mark-one-headphones",
-            quantity: 6
-        },
-        {
-            slug: "zx7-speaker",
-            quantity: 2
-        }
-    ]
-
-    const cartItems = cart.map(({ slug, quantity }) => ({ ...getProduct(slug), quantity: quantity }))
+    const { products } = useContext(CartContext)
 
     const prices = [
         {
@@ -145,7 +131,7 @@ export default () => {
                     <div className="form-section summary">
                         <h6>summary</h6>
                         <List className="order-summary"
-                            items={cartItems}
+                            items={products}
                             itemHandler={({ image, name, price, quantity }, index) => (
                                 <li key={index}>
                                     <Picture {...image} />
@@ -166,7 +152,7 @@ export default () => {
                                 </li>
                             )}
                         />
-                        <Button className="primary-button">continue & pay</Button>
+                        <Button className="primary-button" onClick={()=>1} onSubmit={()=>1}>continue & pay</Button>
                     </div>
                 </section>
             </form>
