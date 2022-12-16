@@ -1,18 +1,19 @@
 import React, { Fragment, useContext } from "react"
 import { Link } from "react-router-dom"
 import CartContext from "../../../../context/CartContext"
-import { formatPrice } from "../../../../Functions"
+import { formatPrice, getProducts } from "../../../../Functions"
 import Button from "../../../UI/Button"
-import CounterInput from "../../../UI/CounterInput"
 import List from "../../../UI/List"
 import Modal from "../../../UI/Modal"
-import Picture from "../../../UI/Picture"
+import CartItem from "./CartItem"
 
 import "./styles.sass"
 
 export default ({ ...props }) => {
 
-    const { products } = useContext(CartContext)
+    const { cart, addCart, clearCart, getTotalPrice } = useContext(CartContext)
+
+    const products = getProducts(cart)
     
     return (
         <Modal {...props}>
@@ -20,7 +21,7 @@ export default ({ ...props }) => {
                 <div className="cart">
                     <div className="heading">
                         <h6>CART ({products.length})</h6>
-                        <Button>Remove all</Button>
+                        <Button onClick={() => clearCart()}>Remove all</Button>
                     </div>
                     <div className="summary">
                         {
@@ -29,27 +30,25 @@ export default ({ ...props }) => {
                                 <List 
                                     className="products" 
                                     items={products} 
-                                    itemHandler={({ image, name, price }, index) => (
-                                        <li key={index}>
-                                            <Picture {...image} />
-                                            <div className="details">
-                                                <div className="name">{name}</div>
-                                                <div className="price">{formatPrice(price)}</div>
-                                            </div>
-                                            <CounterInput />
-                                        </li>
-                                    )}
+                                    itemHandler={(item, index) => <CartItem key={index} {...item} />}
                                 />
                                 <div className="price">
                                     <span>total</span>
-                                    <span>{formatPrice(5396)}</span>
+                                    <span>{formatPrice(getTotalPrice())}</span>
                                 </div>
                             </Fragment>
                             :
                             <h6>There are no items in your cart</h6>
                         }
                     </div>
-                    <Link to="/checkout" className="link-button checkout">checkout</Link>
+                    <Link 
+                        to="/checkout" 
+                        className="link-button checkout" 
+                        onClick={ev => {
+                           if (!products.length) ev.preventDefault()
+                        }}
+                        aria-disabled={!products.length}
+                    >checkout</Link>
                 </div>
             </section>
         </Modal>
