@@ -6,9 +6,9 @@ import Category from "./Routes/Category"
 import Home from "./Routes/Home"
 import Product from "./Routes/Product"
 import Checkout from "./Routes/Checkout"
+import { CartProvider } from "../context/CartContext"
 
 import "./App.sass"
-import { CartProvider } from "../context/CartContext"
 
 const App = () => (
     <CartProvider>
