@@ -4,7 +4,6 @@ import List from "../../UI/List"
 import Icon from "../../UI/Icon"
 
 import "./styles.sass"
-import { getCategoryItems } from "../../../Functions"
 
 const categories = [
     "headphones", 
@@ -16,7 +15,9 @@ export default () => {
 
     const categoryHandler = category => (
         <li key={category} className="category">
-            <img src={`./assets/shared/desktop/image-category-thumbnail-${category}.png`} alt="" />
+            <div className="category-thumbnail">
+                <img src={`./assets/shared/desktop/image-category-thumbnail-${category}.png`} alt="" />
+            </div>
             <div className="details">
                 <div className="name">{category}</div>
                 <Link to={`/c?n=${category}`}>
@@ -28,7 +29,7 @@ export default () => {
     )
 
     return (
-        <section className="categories">
+        <section className="categories-links">
             <List items={categories} itemHandler={categoryHandler} />
         </section>
     )
