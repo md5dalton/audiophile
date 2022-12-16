@@ -22,7 +22,7 @@ export default ({ image, name, price, slug, quantity: pQuantity }) => {
                 <div className="name">{name}</div>
                 <div className="price">{formatPrice(price)}</div>
             </div>
-            <CounterInput value={quantity} valueHandler={quantityHandler} />
+            <CounterInput value={pQuantity} valueHandler={quantityHandler} />
         </li>
     )
 }
