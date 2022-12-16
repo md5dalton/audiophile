@@ -5,7 +5,7 @@ import Page from "../../Layout/Page"
 import About from "../../Layout/About"
 import Picture from "../../UI/Picture"
 import CategoriesLinks from "../../Layout/CategoriesLinks"
-import { getProduct } from "../../../Functions"
+import { formatPrice, getProduct } from "../../../Functions"
 import Button from "../../UI/Button"
 import CounterInput from "../../UI/CounterInput"
 
@@ -15,13 +15,15 @@ export default () => {
 
     const [ searchParams, setSearchParams ] = useSearchParams()
 
-    const product = getProduct(searchParams.get("s"))
+    const slug = searchParams.get("s")
+    
+    const product = getProduct(slug)
 
     const {
-        image, new: isNew, name, description, slug, price, features, includes, gallery, others
+        image, new: isNew, name, description, price, features, includes, gallery, others
     } = product
     
-    return (
+    return slug && (
         <Page name="product">
             <section className="product-detail">
                 <div className="product-item">
@@ -31,11 +33,11 @@ export default () => {
                         {!isNew && <overline className="new-product">new product</overline>}
                         <h4>{name}</h4>
                         <p>{description}</p>
-                        <h6 className="price">$ {Intl.NumberFormat("en-US").format(price)}</h6>
-                        <form>
+                        <h6 className="price">{formatPrice(price)}</h6>
+                        <div className="form-wrapper">
                             <CounterInput />
                             <Button className="primary-button">add to cart</Button>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div className="features">
