@@ -1,0 +1,72 @@
+@use "../../../../styles/util" as *
+
+.cart
+    background-color: var(--color-white)
+    color: var(--color-text-dark)
+    padding: 32px 0
+    border-radius: 8px
+    text-align: initial
+    padding: 32px 28px
+    margin-top: 24px
+
+    .heading
+        display: flex
+        justify-content: space-between
+
+        button
+            opacity: .5
+            text-decoration: underline
+
+    .summary
+        padding: 32px 0 24px
+        
+        ul
+            display: grid
+            gap: 24px
+
+            li
+                display: flex
+                align-items: center
+                gap: 16px
+
+                .price, .quantity-counter
+                    font-weight: 700
+
+                picture
+                    flex-shrink: 0
+
+                img
+                    width: 64px
+                    border-radius: 8px
+
+                .price, .quantity-counter
+                    opacity: .5
+                    font-size: 14px
+
+                .details
+                    flex-grow: 1
+
+                    .name
+                        font-weight: 700
+                        word-break: break-word
+
+                .counter-input
+                    @include padding-x(12px)
+                    gap: 12px
+
+        .price
+            text-transform: uppercase
+            padding-top: 32px
+            @include flex(space-between)
+
+            > *
+                &:first-child
+                    opacity: .5
+
+                &:last-child
+                    font-size: 18px
+                    font-weight: 700
+
+    a.checkout
+        width: 100%
+                    
