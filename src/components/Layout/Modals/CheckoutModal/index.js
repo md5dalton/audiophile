@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react"
 import { Link } from "react-router-dom"
 import CartContext from "../../../../context/CartContext"
-import { formatPrice } from "../../../../Functions"
+import { formatPrice, getProducts } from "../../../../Functions"
 import Icon from "../../../UI/Icon"
 import List from "../../../UI/List"
 import Modal from "../../../UI/Modal"
@@ -9,12 +9,14 @@ import Picture from "../../../UI/Picture"
 
 import "./styles.sass"
 
-export default ({ ...props }) => {
+export default ({ isOpen, toggleHandler, grandTotal }) => {
 
-    const { products } = useContext(CartContext)
+    const { cart } = useContext(CartContext)
+
+    const products = getProducts(cart)
     
     return (
-        <Modal {...props}>
+        <Modal isOpen={isOpen} toggleHandler={toggleHandler}>
             <section>
                 <div className="checkout-modal">
                     <div className="heading">
@@ -43,7 +45,7 @@ export default ({ ...props }) => {
                         </div>
                         <div className="price">
                             <div>grand total</div>
-                            <div>{formatPrice(5396)}</div>
+                            <div>{formatPrice(grandTotal)}</div>
                         </div>
                     </div>
                     <Link to="/" className="link-button">back to home</Link>
