@@ -8,16 +8,19 @@ import Product from "./Routes/Product"
 import Checkout from "./Routes/Checkout"
 
 import "./App.sass"
+import { CartProvider } from "../context/CartContext"
 
 const App = () => (
-    <Router>
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/c/*" element={<Category />} />
-            <Route path="/p/*" element={<Product />} />
-            <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-    </Router>
+    <CartProvider>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/c/*" element={<Category />} />
+                <Route path="/p/*" element={<Product />} />
+                <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+        </Router>
+    </CartProvider>
 )
 
 const root = createRoot(document.getElementById("app"))
