@@ -9,3 +9,5 @@ export const getResponsiveImages = (prepend, image) => ({
 export const getCategoryItems = category => data.filter(item => item.category === category)
 export const getProduct = slug => data.find(item => item.slug === slug)
 export const formatPrice = value => `$ ${Intl.NumberFormat("en-US").format(value)}`
+
+export const getProducts = cart => cart.map(({ slug, quantity }) => ({ ...getProduct(slug), quantity: quantity }))
