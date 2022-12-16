@@ -5,11 +5,11 @@ import Nav from '../../UI/Nav'
 
 import "./styles.sass"
 
-export default ({ children, ...props }) => {
+export default ({ sidedrawerToggleHandler, children, ...props }) => {
     return (
         <header {...props}>
             <div className="toolbar">
-                <Button className="menu-toggle"><Icon name="hamburger" /></Button>
+                <Button className="menu-toggle" onClick={() => sidedrawerToggleHandler()}><Icon name="hamburger" /></Button>
                 <Nav />
                 <Button><Icon name="cart" /></Button>
             </div>
