@@ -8,6 +8,7 @@ import CategoriesLinks from "../../Layout/CategoriesLinks"
 import { getResponsiveImages } from "../../../Functions"
 
 import "./styles.sass"
+import { Link } from "react-router-dom"
 
 export default () => {
 
@@ -24,7 +25,7 @@ export default () => {
             <p>
                 Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
             </p>
-            <Button>See product</Button>
+            <Link to="/p?s=xx99-mark-two-headphones" className="link-button">See product</Link>
         </section>
     )
     
@@ -36,17 +37,17 @@ export default () => {
                     <Picture {...images[0]} />
                     <h1>ZX9 speaker</h1>
                     <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                    <Button>See product</Button>
+                    <Link to="/p?s=zx9-speaker" className="link-button">See product</Link>
                 </div>
                 <div className="product secondary colapsed">
                     <Picture {...images[1]} />
                     <h4>ZX7 speaker</h4>
-                    <Button>See product</Button>
+                    <Link to="/p?s=zx7-speaker" className="link-button">See product</Link>
                 </div>
                 <div className="product secondary dettached">
                     <Picture {...images[2]} />
                     <h4>YX1 earphones</h4>
-                    <Button>See product</Button>
+                    <Link to="/p?s=yx1-earphones" className="link-button">See product</Link>
                 </div>
             </section>
             <About />
