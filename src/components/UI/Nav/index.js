@@ -11,10 +11,10 @@ export default () => (
             <Icon className="logo" name="logo" />
         </Link> 
         <ul className="nav-links" role="list">
-            <NavLink>home</NavLink>
-            <NavLink>headphones</NavLink>
-            <NavLink>speakers</NavLink>
-            <NavLink>earphones</NavLink>
+            <NavLink to="/">home</NavLink>
+            <NavLink to="/c?n=headphones">headphones</NavLink>
+            <NavLink to="/c?n=speakers">speakers</NavLink>
+            <NavLink to="/c?n=earphones">earphones</NavLink>
         </ul>
     </nav>
 )
