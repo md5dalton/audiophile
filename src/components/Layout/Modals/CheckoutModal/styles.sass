@@ -1,0 +1,85 @@
+@use "../../../../styles/util" as *
+
+.checkout-modal
+    background-color: var(--color-white)
+    color: var(--color-text-dark)
+    padding: 32px
+    border-radius: 8px
+    text-align: initial
+    margin-top: 24px
+
+    h5
+        text-transform: uppercase
+        margin: 24px 0 16px
+        line-height: 28px
+
+    p
+        opacity: .5
+
+    .summary
+        margin: 24px 0
+        background-color: var(--color-light-grey)
+        border-radius: 8px
+        overflow: hidden
+
+        > *
+            padding: 24px
+
+        ul
+            display: grid
+            gap: 24px
+            border-bottom: inset var(--color-black) 1.6px
+            margin-bottom: 12px
+            padding-bottom: 12px
+
+            li
+                display: flex
+                gap: 16px
+
+                .price, .quantity-counter
+                    font-weight: 700
+
+                picture
+                    flex-shrink: 0
+
+                img
+                    width: 64px
+                    border-radius: 8px
+
+                .price, .quantity-counter
+                    opacity: .5
+                    font-size: 14px
+
+                .details
+                    flex-grow: 1
+
+                    .name
+                        font-weight: 700
+                        text-overflow: clip
+                        overflow: hidden
+                        white-space: nowrap
+                        max-width: 85px
+
+        .additional-products
+            text-align: center
+            font-weight: 700
+            opacity: .5
+
+        > .price
+            background-color: var(--color-black)
+            color: var(--color-text)
+            text-transform: uppercase
+            padding-top: 16px
+
+            >* 
+                &:first-child
+                    opacity: .5
+
+                &:last-child
+                    font-size: 18px
+
+    a.link-button
+        width: 100%
+                
+
+                    
