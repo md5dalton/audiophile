@@ -17,4 +17,12 @@
         opacity: .5
         max-width: 570px
 
+    @include desktop
+        display: grid
+        grid-template-columns: 1fr 1fr
+        column-gap: 125px
+        align-items: center
 
+        .details
+            max-width: 445px
+            order: -1
