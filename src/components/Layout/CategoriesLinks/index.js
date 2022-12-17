@@ -30,7 +30,7 @@ export default () => {
 
     return (
         <section className="categories-links">
-            <List items={categories} itemHandler={categoryHandler} />
+            <List className="categories-list" items={categories} itemHandler={categoryHandler} />
         </section>
     )
 }
