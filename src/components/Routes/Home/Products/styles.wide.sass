@@ -1,0 +1,46 @@
+@use "../../../../styles/util" as *
+
+.page.home .products .product
+    @include tablet
+        &.primary
+            row-gap: 64px
+
+            picture img
+                width: 240px
+
+            .link-button
+                margin: 16px 0
+
+        &.secondary
+            picture img
+                width: 100%
+
+            &.dettached
+                grid-template-columns: 1fr 1fr
+                column-gap: 10px
+                align-items: center
+
+                picture, picture img
+                    height: 100%
+                    
+                .details
+                    height: 100%
+                    align-content: center
+
+
+    @include desktop
+        &.primary
+            justify-items: initial
+            grid-template-columns: 1fr 349px
+            column-gap: 140px
+            padding: 96px
+            padding-bottom: 0
+
+            > *
+                grid-column: 2 / -1
+
+            picture
+                grid-column: 1 / 2
+
+                img
+                    width: 410px
