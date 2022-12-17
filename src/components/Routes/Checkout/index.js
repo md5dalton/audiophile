@@ -172,7 +172,7 @@ export default () => {
                                 </li>
                             )}
                         />
-                        <Button className="primary-button">continue & pay</Button>
+                        <Button className="button">continue & pay</Button>
                     </div>
                 </section>
             </form>
