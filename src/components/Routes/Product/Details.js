@@ -26,7 +26,7 @@ export default ({ image, new: isNew, name, slug, description, price, features, i
                     <h6 className="price">{formatPrice(price)}</h6>
                     <div className="form-wrapper">
                         <CounterInput value={quantity} valueHandler={setQuantity} />
-                        <Button className="primary-button" onClick={() => addCart(slug, quantity)}>add to cart</Button>
+                        <Button className="button" onClick={() => addCart(slug, quantity)}>add to cart</Button>
                     </div>
                 </div>
             </div>
