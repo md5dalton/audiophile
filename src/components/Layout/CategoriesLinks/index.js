@@ -20,7 +20,7 @@ export default () => {
             </div>
             <div className="details">
                 <div className="name">{category}</div>
-                <Link to={`/c?n=${category}`}>
+                <Link to={`/c?n=${category}`} className="button terciary">
                     <span>shop</span>
                     <Icon name="arrow-right" />
                 </Link>
