@@ -12,7 +12,7 @@ export default ({ others }) => (
                 <li key={index}>
                     <Picture {...image} />
                     <h5>{name}</h5>
-                    <Link to={`/p?s=${slug}`} className="link-button">see product</Link>
+                    <Link to={`/p?s=${slug}`} className="button">see product</Link>
                 </li>
             )}
         />
