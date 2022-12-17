@@ -48,7 +48,7 @@ export default ({ isOpen, toggleHandler, grandTotal }) => {
                             <div>{formatPrice(grandTotal)}</div>
                         </div>
                     </div>
-                    <Link to="/" className="link-button">back to home</Link>
+                    <Link to="/" className="button back-to-home">back to home</Link>
                 </div>
             </section>
         </Modal>
