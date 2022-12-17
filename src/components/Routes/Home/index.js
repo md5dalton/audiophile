@@ -17,7 +17,7 @@ export default () => {
             <p>
                 Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
             </p>
-            <Link to="/p?s=xx99-mark-two-headphones" className="link-button">See product</Link>
+            <Link to="/p?s=xx99-mark-two-headphones" className="button primary CTA">See product</Link>
         </section>
     )
     
