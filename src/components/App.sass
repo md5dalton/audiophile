@@ -32,6 +32,49 @@
     font-weight: bold
     color: var(--color-text)
     background-color: var(--color-primary)
+    transition: .5s
+
+    &:hover
+        background-color: var(--color-button-hover)
+
+.button
+    display: grid
+    place-items: center
+    min-height: 48px
+    min-width: 160px
+    width: fit-content
+    font-weight: bold
+    transition: .5s
+    color: var(--color-text)
+    background-color: var(--color-primary)
+    
+    &:hover
+        background-color: var(--color-button-hover)
+
+    &.primary, &.secondary
+        text-transform: uppercase
+
+    &.secondary
+        background-color: transparent
+        color: var(--color-text-dark)
+        border: solid 1.6px var(--color-black)
+
+        &:hover
+            background-color: var(--color-black)
+            color: var(--color-text)
+
+    &.terciary
+        background-color: transparent
+        color: var(--color-dark-grey)
+        grid-template-columns: auto 8px
+        justify-content: center
+        gap: 13px
+
+        &:hover
+            color: var(--color-primary)
+
+    
+
 
 section .product-item
     picture img
