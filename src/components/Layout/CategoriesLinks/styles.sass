@@ -3,9 +3,9 @@
 .categories-links
     text-transform: uppercase
     font-weight: bold
-    min-width: 100%
+    width: 100%
 
-    ul
+    .categories-list
         display: grid
         gap: 5rem
 
@@ -27,6 +27,7 @@
 
 
     .category
+        @include center-text
         display: grid
         grid-template-rows: 52px 52px 36px 77px
         grid-template-columns: 1fr 1fr
@@ -44,3 +45,11 @@
         
         .details
             grid-row: 4 / -1
+
+    .categories-list
+        @include tablet
+            grid-template-columns: 1fr 1fr 1fr
+            gap: 10px
+
+        @include desktop
+            gap: 30px
