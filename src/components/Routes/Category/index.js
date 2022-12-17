@@ -30,7 +30,7 @@ export default () => {
                 {!isNew && <overline className="new-product">new product</overline>}
                 <h4>{name}</h4>
                 <p>{description}</p>
-                <Link to={`/p?s=${slug}`} className="link-button">see product</Link>
+                <Link to={`/p?s=${slug}`} className="button">see product</Link>
             </div>
         </li>
     )
