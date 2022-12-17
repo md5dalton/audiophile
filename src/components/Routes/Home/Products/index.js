@@ -20,7 +20,7 @@ export default () => {
                 <div className="details">
                     <h1>ZX9 speaker</h1>
                     <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                    <Link to="/p?s=zx9-speaker" className="button primary">See product</Link>
+                    <Link to="/p?s=zx9-speaker" className="button primary CTA">See product</Link>
                 </div>
             </div>
             <div className="product secondary colapsed">
