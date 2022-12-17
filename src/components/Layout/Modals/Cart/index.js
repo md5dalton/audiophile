@@ -43,7 +43,7 @@ export default ({ ...props }) => {
                     </div>
                     <Link 
                         to="/checkout" 
-                        className="link-button checkout" 
+                        className="button checkout" 
                         onClick={ev => {
                            if (!products.length) ev.preventDefault()
                         }}
