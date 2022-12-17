@@ -17,7 +17,11 @@ export default () => {
 
     const items = getCategoryItems(name)
 
-    const header = <h4 className="category-title">{name}</h4>
+    const header =  (
+        <section>
+            <h4 className="category-title">{name}</h4>
+        </section>
+    )
 
     const itemHandler = ({ image, new: isNew, name, description, slug }, index) => (
         <li key={index} className="product-item">
