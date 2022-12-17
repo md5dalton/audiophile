@@ -14,19 +14,17 @@
 
     section
         @include container-a
-        text-align: center
-        text-align: -webkit-center
-        text-align: -moz-center
+        @include center-text
 
     .page
         display: grid
-        row-gap: 120px
-        padding-bottom: 120px
+        row-gap: 7.5rem
+        padding-bottom: 7.5rem
 
 .link-button, .primary-button
     display: grid
     place-items: center
-    margin: auto
+    // margin: auto
     text-transform: uppercase
     min-height: 48px
     min-width: 160px
@@ -56,3 +54,19 @@ section .product-item
 
 h6
     margin: 0
+
+@include tablet
+    #app
+        .page
+            row-gap: 6rem
+            padding-bottom: 6rem
+
+
+@include desktop
+    #app
+        section
+            text-align: initial
+
+        .page
+            row-gap: 10.5rem
+            padding-bottom: 200px
