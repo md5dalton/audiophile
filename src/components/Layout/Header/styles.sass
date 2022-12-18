@@ -24,8 +24,9 @@ header
         display: none
 
     .category-title
-        padding: 32px 0
+        @include padding-y(32px)
         text-transform: uppercase
+        text-align: center
     
     .hero
         padding-top: 110px
@@ -34,15 +35,16 @@ header
         > *
             max-width: 380px
         
-        overline
-            opacity: .5
+        .overline
+            color: var(--color-dark-grey)
 
-        h1
+        .name
             margin-top: 16px 
             margin-bottom: 24px
+            text-transform: uppercase
 
-        p
-            opacity: .75
+        .description
+            color: var(--color-light-grey)
 
         .CTA
             margin-top: 28px
@@ -56,19 +58,21 @@ header
             
             > *:first-child
                 border-top: solid 1.6px var(--color-border)
-                
+
+            .category-title
+                @include padding-y(100px)
 
         .hero
             padding-top: 125px
             padding-bottom: 165px
 
-            h1
+            .name
                 margin-top: 24px 
 
-            p
+            .description
                 max-width: 350px
 
-            button
+            .button
                 margin-top: 40px
 
         nav
