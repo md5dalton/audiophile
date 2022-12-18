@@ -1,11 +1,12 @@
 import React from "react"
-import { Link, useSearchParams } from "react-router-dom"
 import List from "../../UI/List"
 import Page from "../../Layout/Page"
 import About from "../../Layout/About"
 import Picture from "../../UI/Picture"
+import ProductCard from "./ProductCard"
 import CategoriesLinks from "../../Layout/CategoriesLinks"
 import { getCategoryItems } from "../../../Functions"
+import { Link, useSearchParams } from "react-router-dom"
 
 import "./styles.sass"
 
@@ -23,22 +24,12 @@ export default () => {
         </section>
     )
 
-    const itemHandler = ({ image, new: isNew, name, description, slug }, index) => (
-        <li key={index} className="product-item">
-            <Picture {...image} />
-            <div className="details">
-                {!isNew && <overline className="new-product">new product</overline>}
-                <h4>{name}</h4>
-                <p>{description}</p>
-                <Link to={`/p?s=${slug}`} className="button">see product</Link>
-            </div>
-        </li>
-    )
+    const itemHandler = (item, index) => <ProductCard {...item} key={index} />
     
     return (
         <Page name="category headphones" header={header}>
             <section className="products">
-                <List items={items} itemHandler={itemHandler} />
+                <List items={items} itemHandler={itemHandler} className="products-list" />
             </section>
             <CategoriesLinks />
             <About />
