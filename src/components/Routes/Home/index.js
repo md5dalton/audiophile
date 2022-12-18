@@ -12,9 +12,9 @@ export default () => {
 
     const header = (
         <section className="hero">
-            <overline>New product</overline>
-            <h1>XX99 Mark II Headphones</h1>
-            <p>
+            <div className="overline">New product</div>
+            <h1 className="name">XX99 Mark II Headphones</h1>
+            <p className="description">
                 Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
             </p>
             <Link to="/p?s=xx99-mark-two-headphones" className="button primary CTA">See product</Link>
