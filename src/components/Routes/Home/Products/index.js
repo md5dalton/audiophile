@@ -18,22 +18,22 @@ export default () => {
             <div className="product primary">
                 <Picture {...images[0]} />
                 <div className="details">
-                    <h1>ZX9 speaker</h1>
-                    <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+                    <h1 className="name">ZX9 speaker</h1>
+                    <p className="descri[tion">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
                     <Link to="/p?s=zx9-speaker" className="button primary CTA">See product</Link>
                 </div>
             </div>
             <div className="product secondary colapsed">
                 <Picture {...images[1]} />
                 <div className="details">
-                    <h4>ZX7 speaker</h4>
+                    <h4 className="name">ZX7 speaker</h4>
                     <Link to="/p?s=zx7-speaker" className="button secondary">See product</Link>
                 </div>
             </div>
             <div className="product secondary dettached">
                 <Picture {...images[2]} />
                 <div className="details">
-                    <h4>YX1 earphones</h4>
+                    <h4 className="name">YX1 earphones</h4>
                     <Link to="/p?s=yx1-earphones" className="button secondary">See product</Link>
                 </div>
             </div>
