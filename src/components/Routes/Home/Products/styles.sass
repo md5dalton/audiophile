@@ -13,6 +13,9 @@
             @include padding-x(24px)
             display: grid
             row-gap: 24px
+
+        .name
+            text-transform: uppercase
         
         &.primary
             @include padding-y(55px)
@@ -35,7 +38,6 @@
                 width: 170px
 
             h1
-                text-transform: uppercase
                 width: min-content
 
             .button
@@ -44,7 +46,6 @@
 
                 &:hover
                     background-color: var(--color-dark-grey)
-                    
 
         &.secondary
             text-align: initial
