@@ -10,7 +10,8 @@
         flex-grow: 1
 
     header, footer
-        background-color: var(--color-black)
+        background-color: var(--color-light-black)
+        background-blend-mode: difference
 
     section
         @include container-a
@@ -54,28 +55,6 @@
 
         &:hover
             color: var(--color-primary)
-
-    
-
-
-section .product-item
-    picture img
-        border-radius: 8px
-        margin-bottom: 32px
-
-    .details
-        display: grid
-        gap: 24px
-
-    h4
-        text-transform: uppercase
-        // width: min-content
-        
-    p
-        opacity: .5
-
-    overline
-        color: var(--color-primary)
 
 h6
     margin: 0
