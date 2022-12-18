@@ -2,12 +2,16 @@
 
 .counter-input
     display: grid
-    grid-template-columns: 16px 16px 16px
+    grid-template-columns: repeat(3, 1fr)
     background-color: var(--color-light-grey)
+    
+    button
+        color: var(--color-dark-grey)
 
     input
+        @include center-text
+        width: 100%
         appearance: none
         border: none
         background-color: transparent
         outline: none
-        width: fit-content
