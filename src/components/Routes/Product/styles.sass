@@ -1,52 +1,22 @@
 @use "../../../styles/util" as *
 
-.page.product 
-    section
-        &.product-detail
-            text-align: initial !important
+.page.product section     
+    &.gallery ul
+        display: grid
+        gap: 20px
+
+        img
+            border-radius: 8px
+
+    &.related
+        h5
+            text-transform: uppercase
+
+        ul
+            padding-top: 40px
             display: grid
-            gap: 88px
+            gap: 56px
 
-            p
-                opacity: .5
-                white-space: pre-wrap
-
-            h5
-                text-transform: uppercase
-            
-            .features h5
-                margin-bottom: 24px
-
-            .includes
-                ul
-                    display: grid
-                    gap: 8px
-                    padding-top: 24px
-
-                    li
-                        display: flex
-                        gap: 24px
-
-                    .quantity-counter
-                        color: var(--color-primary)
-                        font-weight: 700
-                    
-        &.gallery ul
-            display: grid
-            gap: 20px
-
-            img
-                border-radius: 8px
-
-        &.related
-            h5
-                text-transform: uppercase
-
-            ul
-                padding-top: 40px
+            li
                 display: grid
-                gap: 56px
-
-                li
-                    display: grid
-                    gap: 32px
+                gap: 32px
