@@ -11,7 +11,7 @@ export default ({ others }) => (
             itemHandler={({ image, slug, name }, index) => (
                 <li key={index}>
                     <Picture {...image} />
-                    <h5>{name}</h5>
+                    <h5 className="name">{name}</h5>
                     <Link to={`/p?s=${slug}`} className="button">see product</Link>
                 </li>
             )}
