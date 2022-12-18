@@ -1,8 +1,9 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import List from "../../UI/List"
 import ProductCard from "./ProductCard"
+import GoBackLink from "../../UI/GoBackLink"
 
+import "./Details.sass"
 
 export default props => {
     
@@ -10,25 +11,29 @@ export default props => {
 
     return (
         <section className="product-detail">
-            <div className="product-wapper">
-                <Link className="go-back">go back</Link>
+            <div className="button-wrapper">
+                <GoBackLink />
+            </div>
+            <div className="main">
                 <ProductCard {...props} />
             </div>
-            <div className="features">
-                <h5>features</h5>
-                <p>{features}</p>
-            </div>
-            <div className="includes">
-                <h5>in the box</h5>
-                <List 
-                    items={includes} 
-                    itemHandler={({quantity, item}, index) => (
-                        <li key={index}>
-                            <span className="quantity-counter">{quantity}x</span> 
-                            <p>{item}</p> 
-                        </li>
-                    )}
-                />
+            <div className="more">
+                <div className="features">
+                    <h5 className="title">features</h5>
+                    <p className="description">{features}</p>
+                </div>
+                <div className="inbox">
+                    <h5 className="title">in the box</h5>
+                    <List 
+                        items={includes} 
+                        itemHandler={({quantity, item}, index) => (
+                            <li key={index}>
+                                <span className="quantity-counter">{quantity}x</span> 
+                                <p>{item}</p> 
+                            </li>
+                        )}
+                    />
+                </div>
             </div>
         </section>
     )
