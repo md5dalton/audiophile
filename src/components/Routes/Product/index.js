@@ -1,9 +1,10 @@
 import React from "react"
 import { useSearchParams } from "react-router-dom"
+import { getProduct } from "../../../Functions"
+
 import Page from "../../Layout/Page"
 import About from "../../Layout/About"
 import CategoriesLinks from "../../Layout/CategoriesLinks"
-import { getProduct } from "../../../Functions"
 
 import Details from "./Details"
 import Gallery from "./Gallery"
