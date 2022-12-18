@@ -1,7 +1,8 @@
 @use "../util" as *
 @use "sass:list"
 
-$elements: body h1 h2 h5 h6 overline subtitle subtext h4 button a
+$elements: body h1 h2 h5 h6 h4 button a
+$classes: overline subtitle subtext
 
 :root
     --text-body: 15px
@@ -54,6 +55,12 @@ $elements: body h1 h2 h5 h6 overline subtitle subtext h4 button a
         line-height: var(--leading-#{$element})
         letter-spacing: var(--tracking-#{$element})
 
+@each $element in $classes
+    .#{$element}
+        font-size: var(--text-#{$element})
+        line-height: var(--leading-#{$element})
+        letter-spacing: var(--tracking-#{$element})
+
 body
     font-weight: 500
     font-family: var(--font)
@@ -65,8 +72,8 @@ main
 a
     color: inherit
 
-overline
+.overline
     text-transform: uppercase
 
-subtext
+.subtext
     font-weight: 700
