@@ -9,6 +9,7 @@ import CartContext from "../../../context/CartContext"
 import CheckoutModal from "../../Layout/Modals/CheckoutModal"
 
 import "./styles.sass"
+import ProductRow from "../../UI/ProductRow"
 
 export default () => {
 
@@ -80,7 +81,7 @@ export default () => {
 
     const totalPrice = getTotalPrice()
     const shipping = 50
-    const VAT = 1.15 * totalPrice
+    const VAT = 1.2 * totalPrice
     const grandTotal = shipping + VAT
 
 
@@ -152,15 +153,10 @@ export default () => {
                         <h6>summary</h6>
                         <List className="order-summary"
                             items={products}
-                            itemHandler={({ image, name, price, quantity }, index) => (
-                                <li key={index}>
-                                    <Picture {...image} />
-                                    <div className="details">
-                                        <div className="name">{name}</div>
-                                        <div className="price">{formatPrice(price)}</div>
-                                    </div>
+                            itemHandler={({ quantity, ...item }, index) => (
+                                <ProductRow key={index} {...item}>
                                     <div className="quantity-counter">x{quantity}</div> 
-                                </li>
+                                </ProductRow>
                             )}
                         />
                         <List className="prices"
