@@ -9,7 +9,7 @@ import "./styles.sass"
 export default ({ name, header, children }) => {
 
     const [ sidedrawer, setSidedrawer ] = useState(false)
-    const [ cart, setCart ] = useState(true)
+    const [ cart, setCart ] = useState(false)
 
     const toggleSidedrawer = () => setSidedrawer(!sidedrawer)
     const toggleCart = () => setCart(!cart)
