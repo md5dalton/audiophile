@@ -3,12 +3,14 @@
 .cart
     background-color: var(--color-white)
     color: var(--color-text-dark)
-    padding: 32px 0
     border-radius: 8px
     text-align: initial
-    padding: 32px 28px
+    padding: 24px 28px 32px
     margin-top: 24px
 
+    .empty-text
+        text-align: center
+        
     .heading
         display: flex
         justify-content: space-between
@@ -16,6 +18,7 @@
 
         button
             text-decoration: underline
+            justify-content: flex-end
 
     .summary
         padding: 32px 0 24px
@@ -24,17 +27,14 @@
             display: grid
             gap: 24px
 
-            .counter-input
-                gap: 12px
-
         .total-price
+            @include flex(space-between)
             text-transform: uppercase
             padding-top: 32px
-            @include flex(space-between)
 
             > *
                 &:first-child
-                    opacity: .5
+                    color: var(--color-dark-grey)
 
                 &:last-child
                     font-size: 18px
@@ -45,4 +45,10 @@
 
         &[aria-disabled="true"]
             filter: grayscale(.5)
+
+    @include tablet
+        min-width: 380px
+        width: fit-content
+        justify-self: flex-end
+
                     
