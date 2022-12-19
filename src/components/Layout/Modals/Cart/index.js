@@ -5,7 +5,7 @@ import { formatPrice, getProducts } from "../../../../Functions"
 import Button from "../../../UI/Button"
 import List from "../../../UI/List"
 import Modal from "../../../UI/Modal"
-import CartItem from "./CartItem"
+import ProductRow from "./ProductRow"
 
 import "./styles.sass"
 
@@ -21,7 +21,7 @@ export default ({ ...props }) => {
                 <div className="cart">
                     <div className="heading">
                         <h6>CART ({products.length})</h6>
-                        <Button onClick={() => clearCart()}>Remove all</Button>
+                        <Button className="button text" onClick={() => clearCart()}>Remove all</Button>
                     </div>
                     <div className="summary">
                         {
@@ -30,9 +30,9 @@ export default ({ ...props }) => {
                                 <List 
                                     className="products" 
                                     items={products} 
-                                    itemHandler={(item, index) => <CartItem key={index} {...item} />}
+                                    itemHandler={(item, index) => <ProductRow key={index} {...item} />}
                                 />
-                                <div className="price">
+                                <div className="total-price">
                                     <span>total</span>
                                     <span>{formatPrice(getTotalPrice())}</span>
                                 </div>
