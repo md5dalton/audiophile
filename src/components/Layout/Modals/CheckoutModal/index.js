@@ -6,6 +6,7 @@ import Icon from "../../../UI/Icon"
 import List from "../../../UI/List"
 import Modal from "../../../UI/Modal"
 import Picture from "../../../UI/Picture"
+import ProductRow from "../../../UI/ProductRow"
 
 import "./styles.sass"
 
@@ -28,15 +29,10 @@ export default ({ isOpen, toggleHandler, grandTotal }) => {
                         <div className="products">
                             <List 
                                 items={products.slice(0, 1)} 
-                                itemHandler={({ image, name, price, quantity }, index) => (
-                                    <li key={index}>
-                                        <Picture {...image} />
-                                        <div className="details">
-                                            <div className="name">{name}</div>
-                                            <div className="price">{formatPrice(price)}</div>
-                                        </div>
+                                itemHandler={({ quantity, ...item }, index) => (
+                                    <ProductRow key={index} {...item}>
                                         <div className="quantity-counter">x{quantity}</div> 
-                                    </li>
+                                    </ProductRow>
                                 )}
                             />
                             <div className="additional-products">
