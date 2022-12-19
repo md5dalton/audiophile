@@ -5,7 +5,9 @@ import CartContext from "../../../../../context/CartContext"
 
 import "./styles.sass"
 
-export default ({ slug, quantity: pQuantity, ...props}) => {
+export default props => {
+    
+    const { slug, quantity: pQuantity } = props
     
     const { addCart } = useContext(CartContext)
 
