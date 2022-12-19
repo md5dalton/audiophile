@@ -1,20 +1,21 @@
 import React, { Fragment, useContext } from "react"
 import { Link } from "react-router-dom"
-import CartContext from "../../../../context/CartContext"
 import { formatPrice, getProducts } from "../../../../Functions"
-import Button from "../../../UI/Button"
+
 import List from "../../../UI/List"
 import Modal from "../../../UI/Modal"
 import ProductRow from "./ProductRow"
+import Button from "../../../UI/Button"
+import CartContext from "../../../../context/CartContext"
 
 import "./styles.sass"
 
 export default ({ ...props }) => {
 
-    const { cart, addCart, clearCart, getTotalPrice } = useContext(CartContext)
+    const { cart, clearCart, getTotalPrice } = useContext(CartContext)
     
     const products = getProducts(cart)
-    
+
     return (
         <Modal {...props}>
             <section>
@@ -38,7 +39,7 @@ export default ({ ...props }) => {
                                 </div>
                             </Fragment>
                             :
-                            <h6>There are no items in your cart</h6>
+                            <h6 className="empty-text">There are no items in your cart</h6>
                         }
                     </div>
                     <Link 
