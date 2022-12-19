@@ -1,21 +1,14 @@
-import React, { Fragment, useContext } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
-import CartContext from "../../../../context/CartContext"
-import { formatPrice, getProducts } from "../../../../Functions"
+import { formatPrice } from "../../../../Functions"
 import Icon from "../../../UI/Icon"
-import List from "../../../UI/List"
 import Modal from "../../../UI/Modal"
-import Picture from "../../../UI/Picture"
-import ProductRow from "../../../UI/ProductRow"
+import ProductsList from "./ProductsList"
 
 import "./styles.sass"
 
 export default ({ isOpen, toggleHandler, grandTotal }) => {
 
-    const { cart } = useContext(CartContext)
-
-    const products = getProducts(cart)
-    
     return (
         <Modal isOpen={isOpen} toggleHandler={toggleHandler}>
             <section>
@@ -26,20 +19,8 @@ export default ({ isOpen, toggleHandler, grandTotal }) => {
                         <p>You will receive an email confirmation shortly.</p>
                     </div>
                     <div className="summary">
-                        <div className="products">
-                            <List 
-                                items={products.slice(0, 1)} 
-                                itemHandler={({ quantity, ...item }, index) => (
-                                    <ProductRow key={index} {...item}>
-                                        <div className="quantity-counter">x{quantity}</div> 
-                                    </ProductRow>
-                                )}
-                            />
-                            <div className="additional-products">
-                                and 2 other items(s)
-                            </div>
-                        </div>
-                        <div className="price">
+                        <ProductsList />
+                        <div className="grand-total">
                             <div>grand total</div>
                             <div>{formatPrice(grandTotal)}</div>
                         </div>
