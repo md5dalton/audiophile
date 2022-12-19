@@ -12,9 +12,9 @@
     .heading
         display: flex
         justify-content: space-between
+        align-items: center
 
         button
-            opacity: .5
             text-decoration: underline
 
     .summary
@@ -24,37 +24,10 @@
             display: grid
             gap: 24px
 
-            li
-                display: flex
-                align-items: center
-                gap: 16px
+            .counter-input
+                gap: 12px
 
-                .price, .quantity-counter
-                    font-weight: 700
-
-                picture
-                    flex-shrink: 0
-
-                img
-                    width: 64px
-                    border-radius: 8px
-
-                .price, .quantity-counter
-                    opacity: .5
-                    font-size: 14px
-
-                .details
-                    flex-grow: 1
-
-                    .name
-                        font-weight: 700
-                        word-break: break-word
-
-                .counter-input
-                    @include padding-x(12px)
-                    gap: 12px
-
-        .price
+        .total-price
             text-transform: uppercase
             padding-top: 32px
             @include flex(space-between)
