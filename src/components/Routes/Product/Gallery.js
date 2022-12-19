@@ -7,7 +7,7 @@ export default ({ gallery }) => (
     <section className="gallery">
         <List 
             items={Object.values(gallery)} 
-            itemHandler={(images, index) => <li key={index}><Picture {...images} /></li> }
+            itemHandler={(images, index) => <Picture key={index} {...images} /> }
         />
     </section>
 )
