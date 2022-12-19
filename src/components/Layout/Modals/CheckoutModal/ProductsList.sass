@@ -1,0 +1,21 @@
+@use "../../../../styles/util" as *
+
+.checkout-modal .summary .products
+    ul
+        display: grid
+        gap: 24px
+        border-bottom: inset var(--color-black) 1.6px
+        margin-bottom: 12px
+        padding-bottom: 12px
+
+        &.min-size > *:not(:first-child)
+            display: none
+            
+
+    .additional-products 
+        display: grid
+        justify-content: center
+
+        button
+            justify-content: center
+            text-transform: initial
