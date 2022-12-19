@@ -2,19 +2,18 @@
 
 .product-row
     display: grid
-    grid-template-columns: 64px 1fr max(96px)
+    grid-template-columns: 64px 1fr max-content
     column-gap: 16px
     align-items: center
 
-    picture img
-        width: 100%
+    .thumbnail
         border-radius: 8px
 
-    .name, .price
+    .name, .price, .quantity-counter
         font-weight: bold
 
     .name
         text-transform: uppercase
 
-    .price
+    .price, .quantity-counter
         color: var(--color-dark-grey)
