@@ -25,53 +25,13 @@
         > *
             padding: 24px
 
-        ul
-            display: grid
-            gap: 24px
-            border-bottom: inset var(--color-black) 1.6px
-            margin-bottom: 12px
-            padding-bottom: 12px
-
-            li
-                display: flex
-                gap: 16px
-
-                .price, .quantity-counter
-                    font-weight: 700
-
-                picture
-                    flex-shrink: 0
-
-                img
-                    width: 64px
-                    border-radius: 8px
-
-                .price, .quantity-counter
-                    opacity: .5
-                    font-size: 14px
-
-                .details
-                    flex-grow: 1
-
-                    .name
-                        font-weight: 700
-                        text-overflow: clip
-                        overflow: hidden
-                        white-space: nowrap
-                        max-width: 85px
-
-        .additional-products
-            text-align: center
-            font-weight: 700
-            opacity: .5
-
-        > .price
+        .grand-total
             background-color: var(--color-black)
             color: var(--color-text)
             text-transform: uppercase
             padding-top: 16px
 
-            >* 
+            > * 
                 &:first-child
                     opacity: .5
 
