@@ -104,7 +104,7 @@ export default () => {
         }
     ]
 
-    const [ modalOpen, setModalOpen ] = useState(false)
+    const [ modalOpen, setModalOpen ] = useState(true)
 
     const modalToggleHandler = () => setModalOpen(!modalOpen)
 
