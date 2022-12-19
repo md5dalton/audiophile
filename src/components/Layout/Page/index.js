@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from "react"
-import { CartProvider } from "../../../context/CartContext"
 import Footer from "../Footer"
 import Header from "../Header"
 import Cart from "../Modals/Cart"
@@ -10,7 +9,7 @@ import "./styles.sass"
 export default ({ name, header, children }) => {
 
     const [ sidedrawer, setSidedrawer ] = useState(false)
-    const [ cart, setCart ] = useState(false)
+    const [ cart, setCart ] = useState(true)
 
     const toggleSidedrawer = () => setSidedrawer(!sidedrawer)
     const toggleCart = () => setCart(!cart)
