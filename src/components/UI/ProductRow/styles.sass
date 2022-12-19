@@ -1,0 +1,20 @@
+@use "../../../styles/util" as *
+
+.product-row
+    display: grid
+    grid-template-columns: 64px 1fr max(96px)
+    column-gap: 16px
+    align-items: center
+
+    picture img
+        width: 100%
+        border-radius: 8px
+
+    .name, .price
+        font-weight: bold
+
+    .name
+        text-transform: uppercase
+
+    .price
+        color: var(--color-dark-grey)
