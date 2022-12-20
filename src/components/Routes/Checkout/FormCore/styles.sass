@@ -1,0 +1,121 @@
+@use "../../../../styles/util" as *
+
+.form-main
+    .form-title
+        margin-bottom: 32px
+        text-transform: uppercase
+
+    .small-text
+        font-weight: 700
+        text-transform: capitalize
+
+    .fieldsets
+        display: grid
+        row-gap: 32px
+
+    .fields
+        display: grid
+        row-gap: 24px
+
+        .field 
+            .title, .input-wrapper
+                transition: .3s
+            
+            &.error
+                .title
+                    color: var(--color-error)
+                
+                .input-wrapper
+                    border-color: var(--color-error)
+                    border-width: 3px
+
+            .title
+                display: flex
+                justify-content: space-between
+                margin-bottom: 16px
+
+            .error-msg
+                font-weight: initial
+
+    legend
+        text-transform: uppercase
+        font-weight: 700
+        color: var(--color-primary)
+        margin-bottom: 16px
+
+    .input-options
+        display: grid
+        gap: 16px
+
+    .input-wrapper
+        @include padding-x(16px)
+        border: solid var(--color-border) 1.6px
+        border-radius: 8px
+        display: grid
+        height: 56px
+        cursor: pointer
+        font-size: 14px
+
+        > label
+            display: flex
+            align-items: center
+            gap: 16px
+
+        input
+            appearance: none
+            border: none
+            outline: none
+            padding: 0
+            margin: 0
+
+            &[type="radio"]
+                height: 20px
+                width: 20px
+                border: solid var(--color-border) 1.6px
+                border-radius: 50%
+                display: grid
+                place-items: center
+
+                &:checked::after
+                    content: ""
+                    display: block
+                    background-color: var(--color-primary)
+                    border-radius: 50%
+                    height: 50%
+                    width: 50%
+
+    .info
+        padding-top: 32px
+
+    .cash-on-delivery-info-row
+        display: flex
+        align-items: center
+        gap: 16px
+
+        .description
+            color: var(--color-dark-grey)
+
+    @include tablet
+        .form-title
+            margin-bottom: 40px   
+
+        .fieldsets
+            row-gap: 53px   
+
+        .fields
+            grid-template-columns: 1fr 1fr
+            column-gap: 24px
+
+        .field
+            &.wide
+                grid-column: 1 / -1
+
+            &.radios
+                display: grid
+                grid-template-columns: 1fr 1fr 
+        
+        .cash-on-delivery-info-row
+            gap: 32px
+
+
+            
