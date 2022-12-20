@@ -7,20 +7,22 @@
     border-radius: 8px
     text-align: initial
     margin-top: 24px
+    max-width: 80vw
+    justify-self: center
 
-    h5
+    .title
         text-transform: uppercase
         margin: 24px 0 16px
         line-height: 28px
 
-    p
-        opacity: .5
+    .description
+        color: var(--color-dark-grey)
 
     .summary
         margin: 24px 0
-        background-color: var(--color-light-grey)
-        border-radius: 8px
         overflow: hidden
+        border-radius: 8px
+        background-color: var(--color-light-grey)
 
         > *
             padding: 24px
@@ -33,13 +35,32 @@
 
             > * 
                 &:first-child
-                    opacity: .5
+                    color: var(--color-dark-grey)
 
                 &:last-child
                     font-size: 18px
 
     .back-to-home
         width: 100%
+
+    @include tablet
+        padding: 48px
+        margin-top: 132px
                 
+        .title
+            margin: 32px 0 24px
+
+        .summary
+            margin: 32px 0 46px
+            display: grid
+            grid-template-columns: 1fr 200px
+            
+            .grand-total
+                display: grid
+                align-content: center
+
+    @include desktop
+        margin-top: 60px
+    
 
                     
