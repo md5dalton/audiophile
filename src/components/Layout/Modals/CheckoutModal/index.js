@@ -15,8 +15,8 @@ export default ({ isOpen, toggleHandler, grandTotal }) => {
                 <div className="checkout-modal">
                     <div className="heading">
                         <Icon name="order-confirmation" />
-                        <h5>thank you<br /> for your order</h5>
-                        <p>You will receive an email confirmation shortly.</p>
+                        <h5 className="title">thank you<br /> for your order</h5>
+                        <p className="description">You will receive an email confirmation shortly.</p>
                     </div>
                     <div className="summary">
                         <ProductsList />
