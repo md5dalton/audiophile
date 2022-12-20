@@ -2,7 +2,7 @@
 @use "sass:list"
 
 $elements: body h1 h2 h5 h6 h4 button a
-$classes: overline subtitle subtext
+$classes: overline subtitle subtext small-text
 
 :root
     --text-body: 15px
@@ -16,6 +16,7 @@ $classes: overline subtitle subtext
     --text-subtext: 12px
     --text-button: 13px
     --text-a: 13px
+    --text-small-text: 12px
 
     --leading-body: 25px
     --leading-h1: 40px
@@ -33,6 +34,7 @@ $classes: overline subtitle subtext
     --tracking-subtitle: 1px
     --tracking-button: 1px
     --tracking-a: 2px
+    --tracking-small-text: -0.21px
 
     @include tablet
         --text-h1: 56px
