@@ -1,87 +1,31 @@
 @use "../../../styles/util" as *
 
 .page.checkout 
-    display: grid
-    gap: 120px
-    padding-bottom: 120px
+    row-gap: 0 !important
 
-    h4, h6, subtitle
-        text-transform: uppercase
-
-    section
+    .container, section
         text-align: initial !important
 
-        .form-section
-            padding: 32px 24px
-
     form
-        button.primary-button
-            width: 100%
-            margin-top: 32px
-            
-        ul
-            display: grid
-            
-            &.fieldsets
-                padding-top: 32px
-                gap: 32px
+        display: grid
+        gap: 32px
 
-            &.inputs
-                padding-top: 16px
-                gap: 24px
+    .summary, .form-main
+        padding: 24px
+        background-color: var(--color-white)
+        border-radius: 8px
 
-                li.radio
-                    display: flex
-                    align-items: center
+    @include tablet
+        .summary, .form-main
+            padding: 32px
 
-                    label
-                        order: 5
+    @include desktop
+        background-color: var(--color-light-grey)
 
-                .input-wrapper
-                    margin-top: 8px
+        form
+            grid-template-columns: 1fr 350px
+            align-items: flex-start
 
-        subtitle
-            color: var(--color-primary)
-
-        .summary
-            ul
-                padding-top: 32px
-
-                li
-                    display: flex
-                    align-items: center
-                    gap: 16px
-
-                    .price, .quantity-counter
-                        font-weight: 700
-
-                &.order-summary
-                    gap: 24px
-
-                    img
-                        width: 64px
-                        border-radius: 8px
-
-                    .price, .quantity-counter
-                        opacity: .5
-                        font-size: 14px
-
-                    .details
-                        flex-grow: 1
-
-                        .name
-                            font-weight: 700
-
-                &.prices
-                    gap: 8px
-
-                    li:last-child
-                        margin-top: 16px
-
-                        .price
-                            color: var(--color-primary)
-
-                    .name
-                        flex-grow: 1
-                        text-transform: uppercase
-                        opacity: .5
+        .summary, .form-main
+            padding: 48px
+        
