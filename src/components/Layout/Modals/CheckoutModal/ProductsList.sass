@@ -4,8 +4,6 @@
     ul
         display: grid
         gap: 24px
-        border-bottom: inset var(--color-black) 1.6px
-        margin-bottom: 12px
         padding-bottom: 12px
 
         &.min-size > *:not(:first-child)
@@ -13,8 +11,10 @@
             
 
     .additional-products 
+        padding-top: 12px
         display: grid
         justify-content: center
+        border-top: solid var(--color-border) 1.6px
 
         button
             justify-content: center
