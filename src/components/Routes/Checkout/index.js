@@ -1,17 +1,12 @@
 import React, { useContext, useState } from "react"
-import List from "../../UI/List"
 import Page from "../../Layout/Page"
-import Picture from "../../UI/Picture"
-import Button from "../../UI/Button"
-import { formatPrice, getProducts } from "../../../Functions"
 import GoBackLink from "../../UI/GoBackLink"
 import CartContext from "../../../context/CartContext"
 import CheckoutModal from "../../Layout/Modals/CheckoutModal"
-
-import "./styles.sass"
-import ProductRow from "../../UI/ProductRow"
 import Summary from "./Summary"
 import FormCore from "./FormCore"
+
+import "./styles.sass"
 
 export default () => {
 
