@@ -8,7 +8,7 @@ import "./styles.sass"
 export default props => {
     
     const { slug, quantity: pQuantity } = props
-    
+
     const { addCart } = useContext(CartContext)
 
     const [ quantity, setQuantity ] = useState(pQuantity)
@@ -17,10 +17,14 @@ export default props => {
         setQuantity(value)
         addCart(slug, value)
     }
+    
+    // quantity !== pQuantity
+    // use pQuantity for CounterInput value instead of quantity
+    // console.log(slug, pQuantity, quantity)
 
     return (
         <ProductRow {...props}>
-            <CounterInput value={quantity} valueHandler={quantityHandler} />
+            <CounterInput value={pQuantity} valueHandler={quantityHandler} />
         </ProductRow>
     )
 }
