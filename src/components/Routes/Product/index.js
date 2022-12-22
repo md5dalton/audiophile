@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
 import { getProduct } from "../../../Functions"
 
@@ -19,6 +19,10 @@ export default () => {
     const slug = searchParams.get("s")
     
     const product = getProduct(slug)
+    
+    useEffect(() => {
+        scrollTo(0,0)
+    }, [product])
     
     return product && (
         <Page name="product">
