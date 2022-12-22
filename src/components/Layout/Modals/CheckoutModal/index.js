@@ -18,7 +18,7 @@ export default ({ isOpen, toggleHandler, grandTotal }) => {
                         <h5 className="title">thank you<br /> for your order</h5>
                         <p className="description">You will receive an email confirmation shortly.</p>
                     </div>
-                    <div className="summary">
+                    <div className="modal-summary">
                         <ProductsList />
                         <div className="grand-total">
                             <div>grand total</div>
