@@ -1,44 +1,37 @@
 @use "../../../../styles/util" as *
 
 .page.checkout .summary
-    ul
-        padding-top: 32px
+    display: grid
+    row-gap: 32px
 
-        li
-            display: flex
-            align-items: center
-            gap: 16px
+    .title
+        text-transform: uppercase
 
-            .price, .quantity-counter
-                font-weight: 700
+    .order-list, .price-summary
+        display: grid
 
-    .order-summary-list
+    .order-list
         gap: 24px
-
-        img
-            width: 64px
-            border-radius: 8px
-
-        .price, .quantity-counter
-            opacity: .5
-            font-size: 14px
-
-        .details
-            flex-grow: 1
-
-            .name
-                font-weight: 700
 
     .price-summary
         gap: 8px
 
-        li:last-child
+    .price-row
+        display: flex
+        justify-content: space-between
+
+        &:last-child
             margin-top: 16px
 
             .price
                 color: var(--color-primary)
 
+        .price
+            font-weight: 700
+
         .name
-            flex-grow: 1
             text-transform: uppercase
-            opacity: .5
+            color: var(--color-dark-grey)
+
+    .confirm
+        width: 100%
