@@ -14,9 +14,6 @@
             display: grid
             row-gap: 24px
 
-        .name
-            text-transform: uppercase
-        
         &.primary
             @include padding-y(55px)
             row-gap: 32px
@@ -37,8 +34,11 @@
             img
                 width: 170px
 
-            h1
+            .name
                 width: min-content
+
+            .description
+                opacity: .75
 
             .button
                 background-color: var(--color-black)

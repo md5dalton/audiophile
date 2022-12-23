@@ -19,7 +19,7 @@ export default () => {
                 <img src={`./assets/shared/desktop/image-category-thumbnail-${category}.png`} alt="" />
             </div>
             <div className="details">
-                <div className="name">{category}</div>
+                <h6 className="name">{category}</h6>
                 <Link to={`/c?n=${category}`} className="button terciary">
                     <span>shop</span>
                     <Icon name="arrow-right" />

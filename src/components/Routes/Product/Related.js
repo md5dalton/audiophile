@@ -5,7 +5,7 @@ import Picture from "../../UI/Picture"
 
 export default ({ others }) => (
     <section className="related">
-        <h5 className="title">you may also like</h5>
+        <h3 className="title">you may also like</h3>
         <List 
             items={others} 
             itemHandler={({ image, slug, name }, index) => (

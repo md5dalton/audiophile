@@ -3,16 +3,10 @@ import Button from "../../../UI/Button"
 import List from "../../../UI/List"
 import ProductRow from "../../../UI/ProductRow"
 import CartContext from "../../../../context/CartContext"
-import { formatPrice, getProducts } from "../../../../Functions"
+import { getProducts } from "../../../../Functions"
 
 import "./styles.sass"
-
-const PriceRow = ({ name, value }) => (
-    <div className="price-row">
-        <span className="name">{name}</span>
-        <span className="price">{formatPrice(value)}</span>
-    </div>
-)
+import PriceRow from "../../../UI/PriceRow"
 
 export default () => {
     

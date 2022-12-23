@@ -1,12 +1,13 @@
 import React, { Fragment, useContext } from "react"
 import { Link } from "react-router-dom"
-import { formatPrice, getProducts } from "../../../../Functions"
+import { getProducts } from "../../../../Functions"
 
 import List from "../../../UI/List"
 import Modal from "../../../UI/Modal"
 import ProductRow from "./ProductRow"
 import Button from "../../../UI/Button"
 import CartContext from "../../../../context/CartContext"
+import PriceRow from "../../../UI/PriceRow"
 
 import "./styles.sass"
 
@@ -34,8 +35,7 @@ export default ({ ...props }) => {
                                     itemHandler={(item, index) => <ProductRow key={index} {...item} />}
                                 />
                                 <div className="total-price">
-                                    <span>total</span>
-                                    <span>{formatPrice(getTotalPrice())}</span>
+                                    <PriceRow name="total" value={getTotalPrice()} />
                                 </div>
                             </Fragment>
                             :

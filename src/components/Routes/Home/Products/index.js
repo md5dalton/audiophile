@@ -19,7 +19,7 @@ export default () => {
                 <Picture {...images[0]} />
                 <div className="details">
                     <h1 className="name">ZX9 speaker</h1>
-                    <p className="descri[tion">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
+                    <p className="description">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
                     <Link to="/p?s=zx9-speaker" className="button primary CTA">See product</Link>
                 </div>
             </div>

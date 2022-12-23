@@ -1,12 +1,12 @@
 @use "../../../../styles/util" as *
 
 .cart
-    background-color: var(--color-white)
-    color: var(--color-text-dark)
-    border-radius: 8px
-    text-align: initial
-    padding: 24px 28px 32px
     margin-top: 24px
+    border-radius: 8px
+    padding: 24px 28px 32px
+    color: var(--color-text-dark)
+    background-color: var(--color-white)
+    text-align: initial
 
     .empty-text
         text-align: center
@@ -28,17 +28,7 @@
             gap: 24px
 
         .total-price
-            @include flex(space-between)
-            text-transform: uppercase
             padding-top: 32px
-
-            > *
-                &:first-child
-                    color: var(--color-dark-grey)
-
-                &:last-child
-                    font-size: 18px
-                    font-weight: 700
 
     a.checkout
         width: 100%

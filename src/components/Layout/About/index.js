@@ -8,8 +8,8 @@ export default () => (
     <section className="about">
         <Picture {...getResponsiveImages("./assets/shared", "image-best-gear.jpg")} />
         <div className="details">
-            <h4>Bringing you the <span>best</span> audio gear</h4>
-            <p>
+            <h2 className="title">Bringing you the <span>best</span> audio gear</h2>
+            <p className="description">
                 Located at the heart of New York City, Audiophile is the premier store for high end headphones, 
                 earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration 
                 rooms available for you to browse and experience a wide range of our products. Stop by our store 

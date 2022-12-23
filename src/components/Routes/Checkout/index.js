@@ -10,7 +10,7 @@ import "./styles.sass"
 
 export default () => {
 
-    const [ modalOpen, setModalOpen ] = useState(false)
+    const [ modalOpen, setModalOpen ] = useState(true)
 
     const modalToggleHandler = () => setModalOpen(!modalOpen)
 
@@ -22,7 +22,7 @@ export default () => {
 
     }
 
-    const { cart, getTotalPrice } = useContext(CartContext)
+    const { getTotalPrice } = useContext(CartContext)
     
     const totalPrice = getTotalPrice()
     const shipping = 50

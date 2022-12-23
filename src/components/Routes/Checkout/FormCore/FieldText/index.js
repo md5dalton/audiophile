@@ -8,7 +8,7 @@ export default ({ className, label, placeholder, name, type }) => {
 
     return (
         <Field className={(className || "") + (className && invalid ? " " : "") + (invalid ? "error" : "")}>
-            <div className="title small-text">
+            <div className="title subtext">
                 <label>{label}</label>
                 {invalid && <span className="error-msg">wrong format</span>}
             </div>

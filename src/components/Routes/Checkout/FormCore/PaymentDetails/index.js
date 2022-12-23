@@ -14,8 +14,8 @@ export default () => {
         <Fieldset legend="payment details">
             <ul role="list" className="fields">
                 <Field className="wide radios">
-                    <div className="title small-text">
-                        <span>payment method</span>
+                    <div className="title subtext">
+                        <span>Payment Method</span>
                     </div>
                     <List
                         className="input-options"

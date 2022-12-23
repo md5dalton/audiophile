@@ -32,11 +32,9 @@
     min-height: 48px
     min-width: 160px
     width: fit-content
-    font-weight: bold
     transition: .3s
     color: var(--color-text)
     background-color: var(--color-primary)
-    text-transform: uppercase
     
     &:hover
         background-color: var(--color-button-hover)
@@ -50,9 +48,11 @@
             background-color: var(--color-black)
             color: var(--color-text)
 
+    &.text, &.terciary
+        color: var(--color-text-grey)
+
     &.terciary
         background-color: transparent
-        color: var(--color-dark-grey)
         grid-template-columns: auto 8px
         justify-content: center
         gap: 13px
@@ -62,15 +62,11 @@
 
     &.text
         background-color: transparent
-        color: var(--color-dark-grey)
         text-transform: capitalize
         justify-content: flex-start
 
         &:hover
             color: var(--color-primary)
-
-h6
-    margin: 0
 
 @include tablet
     #app

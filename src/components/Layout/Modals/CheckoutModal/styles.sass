@@ -12,12 +12,7 @@
     justify-self: center
 
     .title
-        text-transform: uppercase
         margin: 24px 0 16px
-        line-height: 28px
-
-    .description
-        color: var(--color-dark-grey)
 
     .modal-summary
         margin: 24px 0
@@ -29,24 +24,19 @@
             padding: 24px
 
         .grand-total
+            display: grid
+            align-items: center
             background-color: var(--color-black)
             color: var(--color-text)
-            text-transform: uppercase
-            padding-top: 16px
 
-            > * 
-                &:first-child
-                    color: var(--color-dark-grey)
-
-                &:last-child
-                    font-size: 18px
+            .price-row
+                display: initial
 
     .back-to-home
         width: 100%
 
     @include tablet
         padding: 48px
-        // margin-top: 132px
                 
         .title
             margin: 32px 0 24px
@@ -55,13 +45,3 @@
             margin: 32px 0 46px
             display: grid
             grid-template-columns: 1fr 200px
-            
-            .grand-total
-                display: grid
-                align-content: center
-
-    // @include desktop
-    //     margin-top: 60px
-    
-
-                    

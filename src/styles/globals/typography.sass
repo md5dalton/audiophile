@@ -1,67 +1,98 @@
 @use "../util" as *
 @use "sass:list"
 
-$elements: body h1 h2 h5 h6 h4 button a
-$classes: overline subtitle subtext small-text
+$elements: body h1 h2 h3 h4 h5 h6
+$classes: overline subtitle subtext button navlink
 
 :root
-    --text-body: 15px
-    --text-h1: 36px
-    --text-h2: 25px
-    --text-h4: 28px
-    --text-h5: 24px
-    --text-h6: 18px
-    --text-overline: 14px
-    --text-subtitle: 13px
-    --text-subtext: 12px
-    --text-button: 13px
-    --text-a: 13px
-    --text-small-text: 12px
+    // font-size
+    --size-body: 15px
 
-    --leading-body: 25px
-    --leading-h1: 40px
-    --leading-h4: 38px
-    --leading-h5: 36px
-    --leading-overline: 19px
-    --leading-subtitle: 25px
-    --leading-subtext: 16px
-    --leading-a: 25px
+    --size-h1: 36px
+    --size-h2: 28px
+    --size-h3: 24px
+    --size-h4: 28px
+    --size-h5: 24px
+    --size-h6: 15px
+    
+    --size-overline: 14px
+    --size-subtitle: 13px
+    --size-subtext: 12px
+    --size-button: 13px
+    --size-navlink: 13px
 
-    --tracking-h1: 1.29px
-    --tracking-h2: 1px
-    --tracking-h4: 2px
-    --tracking-overline: 10px
-    --tracking-subtitle: 1px
-    --tracking-button: 1px
-    --tracking-a: 2px
-    --tracking-small-text: -0.21px
+
+    // line-height
+    --line-body: 25px
+    
+    --line-h1: 40px
+    --line-h2: 38px
+    --line-h3: 36px
+    --line-h4: 38px
+    --line-h5: 33px
+    --line-h6: 20px
+    
+    --line-overline: 19px
+    --line-subtitle: 25px
+    --line-subtext: 16px
+    --line-button: 18px
+    --line-navlink: 25px
+
+    // letter-spacing
+    --letter-h1: 1.29px
+    --letter-h2: 1px
+    --letter-h3: .86px
+    --letter-h4: 2px
+    --letter-h5: 1.7px
+    --letter-h6: 1.07px
+
+    --letter-overline: 10px
+    --letter-subtitle: 1px
+    --letter-subtext: .214px
+    --letter-button: 1px
+    --letter-navlink: 2px
 
     @include tablet
-        --text-h1: 56px
-        --text-h2: 40px
+        // font-size
+        --size-h1: 56px
+        --size-h2: 40px
+        --size-h3: 32px
 
-        --leading-h1: 58px
-        --leading-h2: 44px
-        --leading-h3: 36px
-        --leading-h4: 38px
-        --leading-h5: 33px
-        --leading-h6: 24px
 
-        --tracking-h1: 2px
+        // line-height
+        --line-h1: 58px
+        --line-h2: 44px
 
+
+        // letter-spacing
+        --letter-h1: 2px
+        --letter-h2: 1.5px
+        --letter-h3: 1.15px
+
+    @include desktop
+        // font-size
+        --size-h6: 18px
+
+
+        // line-height
+        --line-h6: 24px
+
+
+        // letter-spacing
+        ---letter-h6: 1.3px
 
 
 @each $element in $elements
     #{$element}
-        font-size: var(--text-#{$element})
-        line-height: var(--leading-#{$element})
-        letter-spacing: var(--tracking-#{$element})
+        font-size: var(--size-#{$element})
+        line-height: var(--line-#{$element})
+        letter-spacing: var(--letter-#{$element})
 
 @each $element in $classes
     .#{$element}
-        font-size: var(--text-#{$element})
-        line-height: var(--leading-#{$element})
-        letter-spacing: var(--tracking-#{$element})
+        font-size: var(--size-#{$element})
+        line-height: var(--line-#{$element})
+        letter-spacing: var(--letter-#{$element})
 
 body
     font-weight: 500
@@ -74,8 +105,20 @@ main
 a
     color: inherit
 
-.overline
+
+h1, h2, h3, h4, h5, h6, .overline, .subtitle, .button, .navlink
     text-transform: uppercase
+    font-weight: 700
+
+.overline, .subtitle
+    color: var(--color-primary)
+
+.overline
+    font-weight: 400
 
 .subtext
     font-weight: 700
+
+p
+    white-space: pre-wrap
+    opacity: .5

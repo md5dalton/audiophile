@@ -9,21 +9,21 @@ export default () => {
 
     return (
         <div className="form-main">
-            <h4 className="form-title">checkout</h4>
+            <h3 className="form-title">checkout</h3>
             <ul role="list" className="form-inputs fieldsets">
                 <Fieldset legend="billing details">
                     <ul role="list" className="fields">
-                        <FieldText label="name" placeholder="Majara" name="name" />
-                        <FieldText label="email" placeholder="mail@mail.com" name="email" type="email" />
-                        <FieldText label="phone number" placeholder="+266 63000000" name="phone" />
+                        <FieldText label="Name" placeholder="Majara" name="name" />
+                        <FieldText label="Email" placeholder="mail@mail.com" name="email" type="email" />
+                        <FieldText label="Phone Number" placeholder="+266 63000000" name="phone" />
                     </ul>
                 </Fieldset>
                 <Fieldset legend="shipping info">
                     <ul role="list" className="fields">
-                        <FieldText label="address" placeholder="Ha Mpiti, Qacha's Nek" name="address" className="wide" />
-                        <FieldText label="ZIP code" placeholder="1997" name="zip" />
-                        <FieldText label="city" placeholder="Qacha's Nek" name="city" />
-                        <FieldText label="country" placeholder="Lesotho" name="country" />
+                        <FieldText label="Address" placeholder="Ha Mpiti, Qacha's Nek" name="address" className="wide" />
+                        <FieldText label="ZIP Code" placeholder="1997" name="zip" />
+                        <FieldText label="City" placeholder="Qacha's Nek" name="city" />
+                        <FieldText label="Country" placeholder="Lesotho" name="country" />
                     </ul>
                 </Fieldset>
                 <PaymentDetails />
