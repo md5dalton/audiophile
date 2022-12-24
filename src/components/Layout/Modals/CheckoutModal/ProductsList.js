@@ -3,8 +3,8 @@ import { getProducts } from "../../../../Functions"
 
 import List from "../../../UI/List"
 import Button from "../../../UI/Button"
-import ProductRow from "../../../UI/ProductRow"
 import CartContext from "../../../../context/CartContext"
+import ProductRowQauntity from "../../../UI/ProductRowQauntity"
 
 import "./ProductsList.sass"
 
@@ -23,11 +23,7 @@ export default () => {
             <List
                 className={isMax ? "" : "min-size"}
                 items={products} 
-                itemHandler={({ quantity, ...item }, index) => (
-                    <ProductRow key={index} {...item}>
-                        <div className="quantity-counter">x{quantity}</div> 
-                    </ProductRow>
-                )}
+                itemHandler={(item, index) => <ProductRowQauntity key={index} {...item} /> }
             />
             {
                 products.length > 1 && (
