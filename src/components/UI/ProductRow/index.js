@@ -9,7 +9,7 @@ export default ({ slug, name, price, children }) => (
         <Img className="thumbnail" src={`cart/image-${slug}.jpg`} />
         <div className="details">
             <div className="name">{name}</div>
-            <div className="price">{formatPrice(price)}</div>
+            <p className="price">{formatPrice(price)}</p>
         </div>
         <div className="buttons">
             {children}
