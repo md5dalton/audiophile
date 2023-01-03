@@ -17,7 +17,7 @@ export default id => {
         "e-Money":
             <ul role="list" className="fields">
                 <FieldText label="e-Money Number" placeholder="59000000" name="e-money-number" />
-                <FieldText label="e-Money PIN" placeholder="1234" name="e-money-pin" type="password" max={4} />
+                <FieldText label="e-Money PIN" placeholder="1234" name="e-money-pin" type="password" />
             </ul>
         }
 
