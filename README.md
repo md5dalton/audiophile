@@ -5,6 +5,7 @@
 ## Table of contents
 
 - [Overview](#overview)
+  - [Getting Started](#getting-started)
   - [The challenge](#the-challenge)
   - [Links](#links)
 - [My process](#my-process)
@@ -15,6 +16,22 @@
 
 
 **To do this challenge, you need a strong understanding of HTML, CSS, and JavaScript.**
+
+## Getting Started
+
+To run:
+
+Development server:
+
+```bash
+npm run serve
+```
+
+Production build:
+
+```bash
+npm run build
+```
 
 ## The challenge
 
@@ -51,21 +68,20 @@ Want some support on the challenge? [Join our Slack community](https://www.front
 
 - Semantic HTML5 markup
 - CSS custom properties
-- CSS Flex
 - [React](https://reactjs.org/) - JS library
 - [Sass](https://sass-lang.com/) - CSS Extension Language
 
 ### What I learned
 
- - CSS Grid
- - Grid-row, grid-column
+ - Reusable react components
 
 ### Continued development
 
- - CSS Grid
+ - React routing
 
 ## Author
 
+- LinkedIn - [@md5dalton](https://www.linkedin.com/in/md5dalton)
 - Github - [Dalton](https://github.com/md5dalton)
 - Frontend Mentor - [@md5dalton](https://www.frontendmentor.io/profile/md5dalton)
 - Twitter - [@md5dalton](https://twitter.com/md5dalton)
