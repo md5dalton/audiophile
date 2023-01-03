@@ -4,7 +4,7 @@ import InputWrapper from "../InputWrapper"
 
 const FieldText = ({ className, label, ...props }) => {
     
-    const [ invalid, setInvalid ] = useState(true)
+    const [ invalid, setInvalid ] = useState(false)
 
     return (
         <Field className={(className || "") + (className && invalid ? " " : "") + (invalid ? "error" : "")} >
