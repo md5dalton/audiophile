@@ -10,7 +10,7 @@ import "./styles.sass"
 
 export default () => {
 
-    const [ modalOpen, setModalOpen ] = useState(true)
+    const [ modalOpen, setModalOpen ] = useState(false)
 
     const modalToggleHandler = () => setModalOpen(!modalOpen)
 
