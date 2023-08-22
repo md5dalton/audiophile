@@ -81,7 +81,6 @@ Want some support on the challenge? [Join our Slack community](https://www.front
 
 ## Author
 
-- LinkedIn - [@md5dalton](https://www.linkedin.com/in/md5dalton)
 - Github - [Dalton](https://github.com/md5dalton)
 - Frontend Mentor - [@md5dalton](https://www.frontendmentor.io/profile/md5dalton)
 - Twitter - [@md5dalton](https://twitter.com/md5dalton)
