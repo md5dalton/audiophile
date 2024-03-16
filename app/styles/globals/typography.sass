@@ -1,0 +1,124 @@
+@use "../util" as *
+@use "sass:list"
+
+$elements: body h1 h2 h3 h4 h5 h6
+$classes: overline subtitle subtext button navlink
+
+:root
+    // font-size
+    --size-body: 15px
+
+    --size-h1: 36px
+    --size-h2: 28px
+    --size-h3: 24px
+    --size-h4: 28px
+    --size-h5: 24px
+    --size-h6: 15px
+    
+    --size-overline: 14px
+    --size-subtitle: 13px
+    --size-subtext: 12px
+    --size-button: 13px
+    --size-navlink: 13px
+
+
+    // line-height
+    --line-body: 25px
+    
+    --line-h1: 40px
+    --line-h2: 38px
+    --line-h3: 36px
+    --line-h4: 38px
+    --line-h5: 33px
+    --line-h6: 20px
+    
+    --line-overline: 19px
+    --line-subtitle: 25px
+    --line-subtext: 16px
+    --line-button: 18px
+    --line-navlink: 25px
+
+    // letter-spacing
+    --letter-h1: 1.29px
+    --letter-h2: 1px
+    --letter-h3: .86px
+    --letter-h4: 2px
+    --letter-h5: 1.7px
+    --letter-h6: 1.07px
+
+    --letter-overline: 10px
+    --letter-subtitle: 1px
+    --letter-subtext: .214px
+    --letter-button: 1px
+    --letter-navlink: 2px
+
+    @include tablet
+        // font-size
+        --size-h1: 56px
+        --size-h2: 40px
+        --size-h3: 32px
+
+
+        // line-height
+        --line-h1: 58px
+        --line-h2: 44px
+
+
+        // letter-spacing
+        --letter-h1: 2px
+        --letter-h2: 1.5px
+        --letter-h3: 1.15px
+
+    @include desktop
+        // font-size
+        --size-h6: 18px
+
+
+        // line-height
+        --line-h6: 24px
+
+
+        // letter-spacing
+        ---letter-h6: 1.3px
+
+
+@each $element in $elements
+    #{$element}
+        font-size: var(--size-#{$element})
+        line-height: var(--line-#{$element})
+        letter-spacing: var(--letter-#{$element})
+
+@each $element in $classes
+    .#{$element}
+        font-size: var(--size-#{$element})
+        line-height: var(--line-#{$element})
+        letter-spacing: var(--letter-#{$element})
+
+body
+    font-weight: 500
+    font-family: var(--font)
+    color: var(--color-text)
+
+main
+    color: var(--color-text-dark)
+
+a
+    color: inherit
+
+
+h1, h2, h3, h4, h5, h6, .overline, .subtitle, .button, .navlink
+    text-transform: uppercase
+    font-weight: 700
+
+.overline, .subtitle
+    color: var(--color-primary)
+
+.overline
+    font-weight: 400
+
+.subtext
+    font-weight: 700
+
+p
+    white-space: pre-wrap
+    opacity: .5
