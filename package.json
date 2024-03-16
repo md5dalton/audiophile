@@ -4,8 +4,12 @@
   "description": "",
   "main": "webpack.common.js",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "serve": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "buildwebpack": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
