@@ -1,3 +1,4 @@
+import { Ubuntu } from "next/font/google"
 import "./globals.css"
 
 const font = Ubuntu({ 
