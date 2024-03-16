@@ -1,0 +1,44 @@
+@use "../../../../styles/util" as *
+
+.cart
+    margin-top: 24px
+    border-radius: 8px
+    padding: 24px 28px 32px
+    color: var(--color-text-dark)
+    background-color: var(--color-white)
+    text-align: initial
+
+    .empty-text
+        text-align: center
+        
+    .heading
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        button
+            text-decoration: underline
+            justify-content: flex-end
+
+    .summary
+        padding: 32px 0 24px
+        
+        ul
+            display: grid
+            gap: 24px
+
+        .total-price
+            padding-top: 32px
+
+    a.checkout
+        width: 100%
+
+        &[aria-disabled="true"]
+            filter: grayscale(.5)
+
+    @include tablet
+        min-width: 380px
+        width: fit-content
+        justify-self: flex-end
+
+                    

@@ -1,0 +1,76 @@
+@use "styles/util" as *
+
+.page.home .products
+    display: grid
+    gap: 24px
+
+    .product
+        border-radius: .5rem
+        overflow: hidden
+        display: grid
+
+        .details
+            @include padding-x(24px)
+            display: grid
+            row-gap: 24px
+
+        &.primary
+            @include padding-y(55px)
+            row-gap: 32px
+            justify-items: center
+
+            background-color: var(--color-primary)
+            color: var(--color-text)
+
+            background-image: url("/assets/home/desktop/pattern-circles.svg")
+            background-position: center -18vh
+            background-size: cover
+            background-repeat: no-repeat
+
+            .details
+                justify-items: center
+                max-width: 350px
+
+            img
+                width: 170px
+
+            .name
+                width: min-content
+
+            .description
+                opacity: .75
+
+            .button
+                background-color: var(--color-black)
+                color: var(--color-text)
+
+                &:hover
+                    background-color: var(--color-dark-grey)
+
+        &.secondary
+            text-align: initial
+
+            .details, picture, img
+                border-radius: inherit
+
+            .details
+                @include padding-y(40px)
+
+            &.colapsed
+                grid-template-columns: 1fr
+                grid-template-rows: 1fr
+                align-items: center
+
+                > *
+                    grid-column: 1 / -1
+                    grid-row: 1 / -1
+
+                .details
+                    height: fit-content
+                    row-gap: 32px
+
+            &.dettached
+                row-gap: 24px
+
+                .details
+                    background-color: var(--color-light-grey)

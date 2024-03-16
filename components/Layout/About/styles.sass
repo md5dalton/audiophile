@@ -1,0 +1,25 @@
+@use "../../../styles/util" as *
+
+section.about
+    img
+        border-radius: .5rem
+
+    .title
+        margin-top: 40px
+        margin-bottom: 32px
+
+        span
+            color: var(--color-primary)
+            
+    .description
+        max-width: 570px
+
+    @include desktop
+        display: grid
+        grid-template-columns: 1fr 1fr
+        column-gap: 125px
+        align-items: center
+
+        .details
+            max-width: 445px
+            order: -1
