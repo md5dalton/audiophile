@@ -12,7 +12,7 @@ export default ({ others }) => (
                     <Picture {...image} />
                     <div className="details">
                         <h5 className="name">{name}</h5>
-                        <Link href={`/p?s=${slug}`} className="button">see product</Link>
+                        <Link href={`/product/${slug}`} className="button">see product</Link>
                     </div>
                 </li>
             )}
