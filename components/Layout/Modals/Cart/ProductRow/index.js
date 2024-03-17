@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react"
-import ProductRow from "../../../../UI/ProductRow"
-import CounterInput from "../../../../UI/CounterInput"
-import CartContext from "../../../../../context/CartContext"
+"use client"
+import { useState } from "react"
+import { useCart } from "@/context/CartContext"
+import ProductRow from "@/components/UI/ProductRow"
+import CounterInput from "@/components/UI/CounterInput"
 
 import "./styles.sass"
 
@@ -9,7 +10,7 @@ export default props => {
     
     const { slug, quantity: pQuantity } = props
 
-    const { addCart } = useContext(CartContext)
+    const { addCart } = useCart()
 
     const [ quantity, setQuantity ] = useState(pQuantity)
 

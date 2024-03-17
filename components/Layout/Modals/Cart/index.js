@@ -1,24 +1,24 @@
-import React, { Fragment, useContext } from "react"
-import { Link } from "react-router-dom"
-import { getProducts } from "../../../../Functions"
-
-import List from "../../../UI/List"
-import Modal from "../../../UI/Modal"
+import { useCart } from "@/context/CartContext"
+import { getProducts } from "@/Functions"
+import { useModal } from "@/context/Modal"
+import Modal from "@/components/UI/Modal"
+import Button from "@/components/UI/Button"
+import List from "@/components/UI/List"
 import ProductRow from "./ProductRow"
-import Button from "../../../UI/Button"
-import CartContext from "../../../../context/CartContext"
-import PriceRow from "../../../UI/PriceRow"
+import PriceRow from "@/components/UI/PriceRow"
+import Link from "next/link"
 
 import "./styles.sass"
 
-export default ({ ...props }) => {
+export default () => {
 
-    const { cart, clearCart, getTotalPrice } = useContext(CartContext)
+    const { cart, clearCart, getTotalPrice } = useCart()
+    const { cart: cartIsOpen, toggleCart } = useModal()
     
     const products = getProducts(cart)
 
     return (
-        <Modal {...props}>
+        <Modal toggleHandler={toggleCart} isOpen={cartIsOpen}>
             <section>
                 <div className="cart">
                     <div className="heading">
@@ -28,8 +28,8 @@ export default ({ ...props }) => {
                     <div className="summary">
                         {
                             products.length ?
-                            <Fragment>
-                                <List 
+                            <>
+                                <List
                                     className="products" 
                                     items={products} 
                                     itemHandler={(item, index) => <ProductRow key={index} {...item} />}
@@ -37,13 +37,13 @@ export default ({ ...props }) => {
                                 <div className="total-price">
                                     <PriceRow name="total" value={getTotalPrice()} />
                                 </div>
-                            </Fragment>
+                            </>
                             :
                             <h6 className="empty-text">There are no items in your cart</h6>
                         }
                     </div>
-                    <Link 
-                        to="/checkout" 
+                    <Link
+                        href="/checkout" 
                         className="button checkout" 
                         onClick={ev => {
                            if (!products.length) ev.preventDefault()
