@@ -1,11 +1,7 @@
-import React from "react"
-import { Link } from "react-router-dom"
-// import { getResponsiveImages } from "../../../../Functions"
-// import Picture from "../../../UI/Picture"
-
 import "./_index.sass"
 import { getResponsiveImages } from "@/Functions"
 import Picture from "@/components/UI/Picture"
+import Link from "next/link"
 
 export default () => {
 
@@ -22,21 +18,21 @@ export default () => {
                 <div className="details">
                     <h1 className="name">ZX9 speaker</h1>
                     <p className="description">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                    <Link to="/p?s=zx9-speaker" className="button primary CTA">See product</Link>
+                    <Link href="/p?s=zx9-speaker" className="button primary CTA">See product</Link>
                 </div>
             </div>
             <div className="product secondary colapsed">
                 <Picture {...images[1]} />
                 <div className="details">
                     <h4 className="name">ZX7 speaker</h4>
-                    <Link to="/p?s=zx7-speaker" className="button secondary">See product</Link>
+                    <Link href="/p?s=zx7-speaker" className="button secondary">See product</Link>
                 </div>
             </div>
             <div className="product secondary dettached">
                 <Picture {...images[2]} />
                 <div className="details">
                     <h4 className="name">YX1 earphones</h4>
-                    <Link to="/p?s=yx1-earphones" className="button secondary">See product</Link>
+                    <Link href="/p?s=yx1-earphones" className="button secondary">See product</Link>
                 </div>
             </div>
         </section>

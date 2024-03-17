@@ -1,6 +1,5 @@
-import React from "react"
-import Picture from "../../UI/Picture"
-import { getResponsiveImages } from "../../../Functions"
+import { getResponsiveImages } from "@/Functions"
+import Picture from "@/components/UI/Picture"
 
 import "./styles.sass"
 

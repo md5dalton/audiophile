@@ -1,8 +1,6 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import List from "../../UI/List"
-import Icon from "../../UI/Icon"
-
+import Link from "next/link"
+import Icon from "@/components/UI/Icon"
+import List from "@/components/UI/List"
 import "./styles.sass"
 
 const categories = [
@@ -20,7 +18,7 @@ export default () => {
             </div>
             <div className="details">
                 <h6 className="name">{category}</h6>
-                <Link to={`/c?n=${category}`} className="button terciary">
+                <Link href={`/c?n=${category}`} className="button terciary">
                     <span>shop</span>
                     <Icon name="arrow-right" />
                 </Link>

@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from "next/link"
 
 export default ({ to, children }) => (
     <li>
-        <Link className="navlink" to={to}>{children}</Link>
+        <Link className="navlink" href={to}>{children}</Link>
     </li>
 )
