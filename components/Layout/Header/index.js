@@ -1,22 +1,24 @@
 "use client"
-import React, { useContext } from 'react'
-import CartContext from '../../../context/CartContext'
-import Button from '../../UI/Button'
-import Icon from '../../UI/Icon'
-import Nav from '../../UI/Nav'
+import { useCart } from "@/context/CartContext"
+import { useModal } from '@/context/Modal'
+
+import Button from "@/components/UI/Button"
+import Icon from "@/components/UI/Icon"
+import Nav from "@/components/UI/Nav"
 
 import "./styles.sass"
 
-export default ({ sidedrawerToggleHandler, cartToggleHandler, children, ...props }) => {
+export default ({ children, ...props }) => {
 
-    const { cart } = useContext(CartContext)
+    const { toggleSidedrawer, toggleCart } = useModal()
+    const { cart } = useCart()
 
     return (
         <header {...props}>
             <div className="toolbar">
-                <Button className="menu-toggle" onClick={() => sidedrawerToggleHandler()}><Icon name="hamburger" /></Button>
+                <Button className="menu-toggle" onClick={() => toggleSidedrawer()}><Icon name="hamburger" /></Button>
                 <Nav />
-                <Button className="cart-toggler" onClick={() => cartToggleHandler()}>
+                <Button className="cart-toggler" onClick={() => toggleCart()}>
                     <Icon name="cart" />
                     {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
                 </Button>
