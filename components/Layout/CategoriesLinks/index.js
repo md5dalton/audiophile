@@ -18,7 +18,7 @@ export default () => {
             </div>
             <div className="details">
                 <h6 className="name">{category}</h6>
-                <Link href={`/c?n=${category}`} className="button terciary">
+                <Link href={`/category/${category}`} className="button terciary">
                     <span>shop</span>
                     <Icon name="arrow-right" />
                 </Link>
