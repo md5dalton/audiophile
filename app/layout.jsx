@@ -1,21 +1,23 @@
 "use client"
 
 import { Manrope } from "next/font/google"
+import { ModalProvider } from "@/context/Modal"
 import { CartProvider } from "@/context/CartContext"
+
 import Footer from "@/components/Layout/Footer"
+import Cart from "@/components/Layout/Modals/Cart"
+import SideDrawer from "@/components/Layout/Modals/SideDrawer"
 
 import "./globals.css"
 import "./App.sass"
-import { ModalProvider } from "@/context/Modal"
-import Cart from "@/components/Layout/Modals/Cart"
 
 const font = Manrope({ 
     subsets: ["latin"]
 })
 
 // export const metadata = {
-//     title: "Multi-step form",
-//     description: "Multi-step form frontend mentor coding challenge",
+//     title: "",
+//     description: "",
 // }
 
 export default function RootLayout({ children }) {
@@ -29,7 +31,7 @@ export default function RootLayout({ children }) {
                     {children}
                     <aside>
                         <Cart />
-                        {/* <SideDrawer isOpen={sidedrawer} toggleHandler={toggleSidedrawer} /> */}
+                        <SideDrawer />
                     </aside>
                 </ModalProvider>
                 </CartProvider>
