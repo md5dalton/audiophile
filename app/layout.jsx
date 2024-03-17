@@ -2,12 +2,12 @@
 
 import { Manrope } from "next/font/google"
 import { CartProvider } from "@/context/CartContext"
-import { useState } from "react"
 import Footer from "@/components/Layout/Footer"
 
 import "./globals.css"
 import "./App.sass"
 import { ModalProvider } from "@/context/Modal"
+import Cart from "@/components/Layout/Modals/Cart"
 
 const font = Manrope({ 
     subsets: ["latin"]
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
                 <ModalProvider>
                     {children}
                     <aside>
-                        {/* <Cart isOpen={cart} toggleHandler={toggleCart} /> */}
+                        <Cart />
                         {/* <SideDrawer isOpen={sidedrawer} toggleHandler={toggleSidedrawer} /> */}
                     </aside>
                 </ModalProvider>
