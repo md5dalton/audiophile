@@ -1,12 +1,13 @@
-import { useCart } from "@/context/CartContext"
 import { getProducts } from "@/Functions"
 import { useModal } from "@/context/Modal"
+import { useRouter } from "next/navigation"
+import { useCart } from "@/context/CartContext"
+
+import ProductRow from "./ProductRow"
+import List from "@/components/UI/List"
 import Modal from "@/components/UI/Modal"
 import Button from "@/components/UI/Button"
-import List from "@/components/UI/List"
-import ProductRow from "./ProductRow"
 import PriceRow from "@/components/UI/PriceRow"
-import Link from "next/link"
 
 import "./styles.sass"
 
@@ -15,7 +16,18 @@ export default () => {
     const { cart, clearCart, getTotalPrice } = useCart()
     const { cart: cartIsOpen, toggleCart } = useModal()
     
+    const router = useRouter()
     const products = getProducts(cart)
+
+    const handler = () => {
+
+        if (!products.length) return
+
+        router.push("/checkout")
+
+        toggleCart()
+
+    }
 
     return (
         <Modal toggleHandler={toggleCart} isOpen={cartIsOpen}>
@@ -42,14 +54,11 @@ export default () => {
                             <h6 className="empty-text">There are no items in your cart</h6>
                         }
                     </div>
-                    <Link
-                        href="/checkout" 
+                    <button
                         className="button checkout" 
-                        onClick={ev => {
-                           if (!products.length) ev.preventDefault()
-                        }}
+                        onClick={handler}
                         aria-disabled={!products.length}
-                    >checkout</Link>
+                    >checkout</button>
                 </div>
             </section>
         </Modal>
