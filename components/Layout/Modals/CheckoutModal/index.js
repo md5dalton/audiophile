@@ -17,8 +17,8 @@ export default ({ isOpen, toggleHandler, grandTotal }) => {
     const { clearCart } = useCart()
  
     const handler = () => {
-        clearCart()
         router.push("/")
+        clearCart()
     }
     
     return (
