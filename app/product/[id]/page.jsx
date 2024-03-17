@@ -1,7 +1,7 @@
 import { getProduct } from "@/Functions"
 
-import Page from "@/components/Layout/Page"
 import About from "@/components/Layout/About"
+import Header from "@/components/Layout/Header"
 import CategoriesLinks from "@/components/Layout/CategoriesLinks"
 
 import Details from "./Details"
@@ -11,16 +11,21 @@ import Related from "./Related"
 import "./styles.sass"
 
 export default ({ params: { id } }) => {
+    
+    const name = "product"
 
     const product = getProduct(id)
     
-    return product && (
-        <Page name="product">
-            <Details {...product} />
-            <Gallery {...product} />
-            <Related {...product} />
-            <CategoriesLinks />
-            <About />
-        </Page>
+    return (
+        <>
+            <Header className={name} />
+            <main className={`page ${name}`}>
+                <Details {...product} />
+                <Gallery {...product} />
+                <Related {...product} />
+                <CategoriesLinks />
+                <About />
+            </main>
+        </>
     )
 }
