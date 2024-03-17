@@ -11,9 +11,9 @@ export default () => (
         </Link> 
         <ul className="nav-links" role="list">
             <NavLink to="/">home</NavLink>
-            <NavLink to="/c?n=headphones">headphones</NavLink>
-            <NavLink to="/c?n=speakers">speakers</NavLink>
-            <NavLink to="/c?n=earphones">earphones</NavLink>
+            <NavLink to="/category/headphones">headphones</NavLink>
+            <NavLink to="/category/speakers">speakers</NavLink>
+            <NavLink to="/category/earphones">earphones</NavLink>
         </ul>
     </nav>
 )
