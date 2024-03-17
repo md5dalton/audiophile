@@ -5,7 +5,7 @@ import "./styles.sass"
 
 export default () => (
     <section className="about">
-        <Picture {...getResponsiveImages("./assets/shared", "image-best-gear.jpg")} />
+        <Picture {...getResponsiveImages("/assets/shared", "image-best-gear.jpg")} />
         <div className="details">
             <h2 className="title">Bringing you the <span>best</span> audio gear</h2>
             <p className="description">

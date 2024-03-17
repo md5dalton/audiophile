@@ -1,0 +1,45 @@
+@use "../../../../styles/util" as *
+
+.form-main
+    .form-title
+        margin-bottom: 32px
+
+    .fieldsets
+        display: grid
+        row-gap: 32px
+
+    .fields
+        display: grid
+        row-gap: 24px
+
+    legend
+        margin-bottom: 16px
+
+    .input-options
+        display: grid
+        gap: 16px
+
+    .info
+        padding-top: 32px
+
+    .cash-on-delivery-info-row
+        display: flex
+        align-items: center
+        gap: 16px
+
+    @include tablet
+        .form-title
+            margin-bottom: 40px   
+
+        .fieldsets
+            row-gap: 53px   
+
+        .fields
+            grid-template-columns: 1fr 1fr
+            column-gap: 24px
+
+        .cash-on-delivery-info-row
+            gap: 32px
+
+
+            

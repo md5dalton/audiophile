@@ -1,0 +1,31 @@
+@use "../../../styles/util" as *
+
+.page.checkout 
+    row-gap: 0 !important
+
+    .container, section
+        text-align: initial !important
+
+    form
+        display: grid
+        gap: 32px
+
+    .summary, .form-main
+        padding: 24px
+        background-color: var(--color-white)
+        border-radius: 8px
+
+    @include tablet
+        .summary, .form-main
+            padding: 32px
+
+    @include desktop
+        background-color: var(--color-light-grey)
+
+        form
+            grid-template-columns: 1fr 350px
+            align-items: flex-start
+
+        .summary, .form-main
+            padding: 48px
+        

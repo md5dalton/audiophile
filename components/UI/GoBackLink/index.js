@@ -1,18 +1,15 @@
-import React from "react"
-import { Link, useNavigate } from "react-router-dom"
+"use client"
 
+import { useRouter } from "next/navigation"
 import "./styles.sass"
 
 export default () => {
 
-    const navigate = useNavigate()
+    const router = useRouter()
 
-    const clickHandler = ev => {
-        ev.preventDefault()
-        navigate(-1)
-    }
+    const handler = () => router.back()
 
     return (
-        <Link to="/" className="button text return-button" onClick={clickHandler}>go back</Link>
+        <button className="button text return-button" onClick={handler}>go back</button>
     )
 }

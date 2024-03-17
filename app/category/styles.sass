@@ -1,0 +1,35 @@
+@use "../../../styles/util" as *
+
+.page.category section.products
+    padding-top: 64px
+
+    .products-list
+        display: grid
+        gap: 120px
+
+    .product-item
+        display: grid
+        justify-items: center
+
+        picture, picture img
+            width: 100%
+
+        .details
+            max-width: 570px
+            justify-items: center
+
+            .name
+                width: min-content
+
+        @include desktop
+            grid-template-columns: 1fr 1fr
+            column-gap: 125px
+            align-items: center
+
+            .details
+                justify-items: initial
+
+            &:nth-child(even)
+                .details
+                    order: -1
+                

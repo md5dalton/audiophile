@@ -14,7 +14,7 @@ export default () => {
     const categoryHandler = category => (
         <li key={category} className="category">
             <div className="category-thumbnail">
-                <img src={`./assets/shared/desktop/image-category-thumbnail-${category}.png`} alt="" />
+                <img src={`/assets/shared/desktop/image-category-thumbnail-${category}.png`} alt="" />
             </div>
             <div className="details">
                 <h6 className="name">{category}</h6>

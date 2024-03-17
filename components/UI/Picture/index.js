@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default ({ mobile, tablet, desktop, ...props }) => (
     <picture {...props}>
         <source srcSet={desktop} media="(min-width: 1024px)" />

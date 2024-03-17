@@ -1,0 +1,23 @@
+@use "../../../../styles/util" as *
+
+.page.checkout .summary
+    display: grid
+    row-gap: 32px
+
+    .order-list, .price-summary
+        display: grid
+
+    .order-list
+        gap: 24px
+
+    .price-summary
+        gap: 8px
+
+    .price-row:last-child
+        margin-top: 16px
+
+        .value
+            color: var(--color-primary)
+
+    .confirm
+        width: 100%
