@@ -1,24 +1,24 @@
-import React, { useContext } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import CartContext from "../../../../context/CartContext"
-import { formatPrice } from "../../../../Functions"
-import Icon from "../../../UI/Icon"
-import Modal from "../../../UI/Modal"
-import PriceRow from "../../../UI/PriceRow"
+"use client"
+
+import { useCart } from "@/context/CartContext"
+import { useRouter } from "next/navigation"
+
+import Icon from "@/components/UI/Icon"
+import Modal from "@/components/UI/Modal"
 import ProductsList from "./ProductsList"
+import PriceRow from "@/components/UI/PriceRow"
 
 import "./styles.sass"
 
 export default ({ isOpen, toggleHandler, grandTotal }) => {
 
-    const navigate = useNavigate()
+    const router = useRouter()
 
-    const { clearCart } = useContext(CartContext)
+    const { clearCart } = useCart()
  
-    const linkHandler = ev => {
-        ev.preventDefault()
+    const handler = () => {
         clearCart()
-        navigate("/")
+        router.push("/")
     }
     
     return (
@@ -36,7 +36,7 @@ export default ({ isOpen, toggleHandler, grandTotal }) => {
                             <PriceRow name="grand total" value={grandTotal} />
                         </div>
                     </div>
-                    <Link to="/" className="button back-to-home" onClick={linkHandler}>back to home</Link>
+                    <button className="button back-to-home" onClick={handler}>back to home</button>
                 </div>
             </section>
         </Modal>
