@@ -1,15 +1,15 @@
 "use client"
 
 import { useState } from "react"
-// import GoBackLink from "../../UI/GoBackLink"
-// import CheckoutModal from "../../Layout/Modals/CheckoutModal"
-// import Summary from "./Summary"
-// import FormCore from "./FormCore"
-
-import "./styles.sass"
 import { useCart } from "@/context/CartContext"
+
+import Summary from "./Summary"
+import FormCore from "./FormCore"
 import Header from "@/components/Layout/Header"
 import GoBackLink from "@/components/UI/GoBackLink"
+
+import "./styles.sass"
+import CheckoutModal from "@/components/Layout/Modals/CheckoutModal"
 
 export default () => {
 
@@ -42,10 +42,14 @@ export default () => {
                     <GoBackLink />
                 </section>
                 <form onSubmit={submitHandler} className="container">
-                    {/* <FormCore />
-                    <Summary /> */}
+                    <FormCore />
+                    <Summary />
                 </form>
-                {/* <CheckoutModal isOpen={modalOpen} toggleHandler={modalToggleHandler} grandTotal={grandTotal} /> */}
+                <CheckoutModal
+                    isOpen={modalOpen}
+                    toggleHandler={modalToggleHandler}
+                    grandTotal={grandTotal}
+                />
             </main>
         </>
     )

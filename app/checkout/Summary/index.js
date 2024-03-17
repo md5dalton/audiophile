@@ -1,16 +1,15 @@
-import React, { useContext } from "react"
-import { getProducts } from "../../../../Functions"
-import Button from "../../../UI/Button"
-import List from "../../../UI/List"
-import CartContext from "../../../../context/CartContext"
-import PriceRow from "../../../UI/PriceRow"
-import ProductRowQauntity from "../../../UI/ProductRowQauntity"
+import { getProducts } from "@/Functions"
+import { useCart } from "@/context/CartContext"
+import List from "@/components/UI/List"
+import ProductRowQauntity from "@/components/UI/ProductRowQauntity"
+import PriceRow from "@/components/UI/PriceRow"
+import Button from "@/components/UI/Button"
 
 import "./styles.sass"
 
 export default () => {
     
-    const { cart, getTotalPrice } = useContext(CartContext)
+    const { cart, getTotalPrice } = useCart()
 
     const products = getProducts(cart)
 
@@ -22,7 +21,7 @@ export default () => {
     return (
         <div className="summary">
             <h6 className="title">summary</h6>
-            <List 
+            <List
                 className="order-list"
                 items={products}
                 itemHandler={(item, index) => <ProductRowQauntity key={index} {...item} /> }

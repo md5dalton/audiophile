@@ -1,5 +1,8 @@
-import React from "react"
-import Icon from "../../../../../UI/Icon"
+// import React from "react"
+// import Icon from "../../../../../UI/Icon"
+// import FieldText from "../../FieldText"
+
+import Icon from "@/components/UI/Icon"
 import FieldText from "../../FieldText"
 
 export default id => {

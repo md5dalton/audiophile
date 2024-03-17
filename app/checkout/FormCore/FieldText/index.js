@@ -1,8 +1,10 @@
-import React, { useState } from "react"
+"use client"
+
+import { useState } from "react"
 import Field from "../Field"
 import InputWrapper from "../InputWrapper"
 
-const FieldText = ({ className, label, ...props }) => {
+export default ({ className, label, type="text", ...props }) => {
     
     const [ invalid, setInvalid ] = useState(false)
 
@@ -18,9 +20,3 @@ const FieldText = ({ className, label, ...props }) => {
         </Field>
     )
 }
-
-FieldText.defaultProps = {
-    type: "text"
-}
-
-export default FieldText

@@ -1,10 +1,11 @@
 import React, { useState } from "react"
-import List from "../../../../UI/List"
+// import List from "../../../../UI/List"
 import Field from "../Field"
 import Fieldset from "../Fieldset"
 import InputWrapper from "../InputWrapper"
 import Radio from "./Radio"
 import useInfo from "./useInfo"
+import List from "@/components/UI/List"
 
 export default () => {
 
