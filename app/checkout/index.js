@@ -1,12 +1,15 @@
-import React, { useContext, useState } from "react"
-import Page from "../../Layout/Page"
-import GoBackLink from "../../UI/GoBackLink"
-import CartContext from "../../../context/CartContext"
-import CheckoutModal from "../../Layout/Modals/CheckoutModal"
-import Summary from "./Summary"
-import FormCore from "./FormCore"
+"use client"
+
+import { useState } from "react"
+// import GoBackLink from "../../UI/GoBackLink"
+// import CheckoutModal from "../../Layout/Modals/CheckoutModal"
+// import Summary from "./Summary"
+// import FormCore from "./FormCore"
 
 import "./styles.sass"
+import { useCart } from "@/context/CartContext"
+import Header from "@/components/Layout/Header"
+import GoBackLink from "@/components/UI/GoBackLink"
 
 export default () => {
 
@@ -22,23 +25,28 @@ export default () => {
 
     }
 
-    const { getTotalPrice } = useContext(CartContext)
+    const { getTotalPrice } = useCart()
     
     const totalPrice = getTotalPrice()
     const shipping = 50
     const VAT = 1.2 * totalPrice
     const grandTotal = shipping + VAT
 
+    const name = "checkout"
+
     return (
-        <Page name="checkout">
-            <section>
-                <GoBackLink />
-            </section>
-            <form onSubmit={submitHandler} className="container">
-                <FormCore />
-                <Summary />
-            </form>
-            <CheckoutModal isOpen={modalOpen} toggleHandler={modalToggleHandler} grandTotal={grandTotal} />
-        </Page>
+        <>
+            <Header className={name} />
+            <main className={`page ${name}`}>
+                <section>
+                    <GoBackLink />
+                </section>
+                <form onSubmit={submitHandler} className="container">
+                    {/* <FormCore />
+                    <Summary /> */}
+                </form>
+                {/* <CheckoutModal isOpen={modalOpen} toggleHandler={modalToggleHandler} grandTotal={grandTotal} /> */}
+            </main>
+        </>
     )
 }
