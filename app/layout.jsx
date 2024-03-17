@@ -1,13 +1,16 @@
 "use client"
 
-import { Ubuntu } from "next/font/google"
+import { Manrope } from "next/font/google"
+import { CartProvider } from "@/context/CartContext"
+import { useState } from "react"
+import Footer from "@/components/Layout/Footer"
+
 import "./globals.css"
 import "./App.sass"
-import { CartProvider } from "@/context/CartContext"
+import { ModalProvider } from "@/context/Modal"
 
-const font = Ubuntu({ 
-    subsets: ["latin"],
-    weight: ["300", "400", "500", "700"]
+const font = Manrope({ 
+    subsets: ["latin"]
 })
 
 // export const metadata = {
@@ -16,15 +19,21 @@ const font = Ubuntu({
 // }
 
 export default function RootLayout({ children }) {
+    
+    
     return (
-        <html lang="en" className="bg-very-light-gray">
-            <body className={`${font.className} relative pb-24`}>
-                <main>
-                    <CartProvider>
+        <html lang="en">
+            <body id="app" className={`${font.className}`}>
+                <CartProvider>
+                <ModalProvider>
                     {children}
-
-                    </CartProvider>
-                </main>
+                    <aside>
+                        {/* <Cart isOpen={cart} toggleHandler={toggleCart} /> */}
+                        {/* <SideDrawer isOpen={sidedrawer} toggleHandler={toggleSidedrawer} /> */}
+                    </aside>
+                </ModalProvider>
+                </CartProvider>
+                <Footer />
             </body>
         </html>
     )
