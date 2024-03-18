@@ -1,4 +1,6 @@
-import React, { createContext, useContext, useEffect, useState } from "react"
+"use client"
+
+import { createContext, useContext, useEffect, useState } from "react"
 import { getProduct } from "../Functions"
 
 const CartContext = createContext()
@@ -7,7 +9,9 @@ export const useCart = () => useContext(CartContext)
 
 export const CartProvider =  ({ children }) => {
 
-    const [ cart, setCart ] = useState(JSON.parse(localStorage.getItem("cart")) || [])
+    const localCart = global?.window?.localStorage?.getItem("cart")
+
+    const [ cart, setCart ] = useState(localCart ? JSON.parse(localCart) : [])
 
     const clearCart = () => setCart([])
 
@@ -32,11 +36,8 @@ export const CartProvider =  ({ children }) => {
     }, 0)
 
     useEffect(() => {
-        
         localStorage.setItem("cart", JSON.stringify(cart))
-        
-    }, [cart]);
-
+    }, [cart])
 
     return (
         <CartContext.Provider 
