@@ -1,15 +1,15 @@
 "use client"
 
 import { useState } from "react"
-import { useCart } from "@/context/CartContext"
+import { totalPrice } from "@/signals/cart"
 
 import Summary from "./Summary"
 import FormCore from "./FormCore"
 import Header from "@/components/Layout/Header"
 import GoBackLink from "@/components/UI/GoBackLink"
+import CheckoutModal from "@/components/Layout/Modals/CheckoutModal"
 
 import "./styles.sass"
-import CheckoutModal from "@/components/Layout/Modals/CheckoutModal"
 
 export default () => {
 
@@ -25,11 +25,9 @@ export default () => {
 
     }
 
-    const { getTotalPrice } = useCart()
-    
-    const totalPrice = getTotalPrice()
+    const tPrice = totalPrice()
     const shipping = 50
-    const VAT = 1.2 * totalPrice
+    const VAT = 1.2 * tPrice
     const grandTotal = shipping + VAT
 
     const name = "checkout"

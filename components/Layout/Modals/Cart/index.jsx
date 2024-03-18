@@ -1,7 +1,9 @@
+"use client"
+
 import { getProducts } from "@/Functions"
 import { useModal } from "@/context/Modal"
 import { useRouter } from "next/navigation"
-import { useCart } from "@/context/CartContext"
+import { cart, clearCart, totalPrice } from "@/signals/cart"
 
 import ProductRow from "./ProductRow"
 import List from "@/components/UI/List"
@@ -13,11 +15,10 @@ import "./styles.sass"
 
 export default () => {
 
-    const { cart, clearCart, getTotalPrice } = useCart()
     const { cart: cartIsOpen, toggleCart } = useModal()
-    
+
     const router = useRouter()
-    const products = getProducts(cart)
+    const products = getProducts(cart.value)
 
     const handler = () => {
 
@@ -47,7 +48,7 @@ export default () => {
                                     itemHandler={(item, index) => <ProductRow key={index} {...item} />}
                                 />
                                 <div className="total-price">
-                                    <PriceRow name="total" value={getTotalPrice()} />
+                                    <PriceRow name="total" value={totalPrice()} />
                                 </div>
                             </>
                             :

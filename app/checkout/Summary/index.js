@@ -1,5 +1,6 @@
 import { getProducts } from "@/Functions"
-import { useCart } from "@/context/CartContext"
+import { cart, totalPrice } from "@/signals/cart"
+
 import List from "@/components/UI/List"
 import ProductRowQauntity from "@/components/UI/ProductRowQauntity"
 import PriceRow from "@/components/UI/PriceRow"
@@ -9,13 +10,11 @@ import "./styles.sass"
 
 export default () => {
     
-    const { cart, getTotalPrice } = useCart()
+    const products = getProducts(cart.value)
 
-    const products = getProducts(cart)
-
-    const totalPrice = getTotalPrice()
+    const tPrice= totalPrice()
     const shipping = 50
-    const VAT = 1.2 * totalPrice
+    const VAT = 1.2 * tPrice
     const grandTotal = shipping + VAT
 
     return (
@@ -27,7 +26,7 @@ export default () => {
                 itemHandler={(item, index) => <ProductRowQauntity key={index} {...item} /> }
             />
             <div className="price-summary">
-                <PriceRow name="total" value={totalPrice} />
+                <PriceRow name="total" value={tPrice} />
                 <PriceRow name="shipping" value={shipping} />
                 <PriceRow name="vat (included)" value={VAT} />
                 <PriceRow name="grand total" value={grandTotal} />

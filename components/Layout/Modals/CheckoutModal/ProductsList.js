@@ -1,18 +1,16 @@
-import React, { useContext, useState } from "react"
+import { useState } from "react"
 import { getProducts } from "../../../../Functions"
+import { cart } from "@/signals/cart"
 
 import List from "../../../UI/List"
 import Button from "../../../UI/Button"
-import CartContext from "../../../../context/CartContext"
 import ProductRowQauntity from "../../../UI/ProductRowQauntity"
 
 import "./ProductsList.sass"
 
 export default () => {
 
-    const { cart } = useContext(CartContext)
-
-    const products = getProducts(cart)
+    const products = getProducts(cart.value)
 
     const [ isMax, setIsMax ] = useState(false)
 

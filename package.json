@@ -1,15 +1,12 @@
 {
   "name": "audiophile-ecommerce",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
-  "main": "webpack.common.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "serve": "webpack serve --open --config webpack.dev.js",
-    "buildwebpack": "webpack --config webpack.prod.js"
+    "lint": "next lint"
   },
   "keywords": [],
   "author": "",

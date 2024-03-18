@@ -1,6 +1,7 @@
 "use client"
-import { useCart } from "@/context/CartContext"
+
 import { useModal } from '@/context/Modal'
+import { cart } from "@/signals/cart"
 
 import Button from "@/components/UI/Button"
 import Icon from "@/components/UI/Icon"
@@ -11,7 +12,6 @@ import "./styles.sass"
 export default ({ children, ...props }) => {
 
     const { toggleSidedrawer, toggleCart } = useModal()
-    const { cart } = useCart()
 
     return (
         <header {...props}>
@@ -20,7 +20,7 @@ export default ({ children, ...props }) => {
                 <Nav />
                 <Button className="cart-toggler" onClick={() => toggleCart()}>
                     <Icon name="cart" />
-                    {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+                    {cart.value.length > 0 && <span className="cart-count">{cart.value.length}</span>}
                 </Button>
             </div>
             <div className="content">

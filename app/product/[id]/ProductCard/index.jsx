@@ -1,7 +1,9 @@
 "use client"
 
-import { useContext, useState } from "react"
-import CartContext from "@/context/CartContext"
+import { useState } from "react"
+import { getProduct } from "@/Functions"
+import { addToCart } from "@/signals/cart"
+
 import ProductCard from "@/components/UI/ProductCard"
 import CounterInput from "@/components/UI/CounterInput"
 import Button from "@/components/UI/Button"
@@ -12,14 +14,14 @@ export default props => {
     
     const { slug } = props
 
-    const { addCart } = useContext(CartContext)
+    const { price } = getProduct(slug)
 
     const [ quantity, setQuantity ] = useState(1)
 
     return (
         <ProductCard {...props}>
             <CounterInput value={quantity} valueHandler={setQuantity} />
-            <Button className="button" onClick={() => addCart(slug, quantity)}>add to cart</Button>
+            <Button className="button" onClick={() => addToCart(slug, quantity, price)}>add to cart</Button>
         </ProductCard>
     )
 }
