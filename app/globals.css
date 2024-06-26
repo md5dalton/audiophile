@@ -11,6 +11,10 @@
   --bg-nav: url('/bg/bg-sidebar-mobile.svg')
 }
 
+html {
+  scrollbar-width: none;
+}
+
 @media (min-width: 768px) {
   :root {
     --font-size-xs: .875rem;
