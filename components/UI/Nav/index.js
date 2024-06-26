@@ -4,8 +4,8 @@ import NavLink from './NavLink'
 
 import "./styles.sass"
 
-export default () => (
-    <nav>
+export default ({ className }) => (
+    <nav className={`${className}`}>
         <Link href="/">
             <Icon className="logo" name="logo" />
         </Link> 
