@@ -1,14 +1,13 @@
-import React from 'react'
-import Icon from '../../UI/Icon'
-import List from '../../UI/List'
-import Nav from '../../UI/Nav'
+import List from "@/components/UI/List"
+import Icon from "@/components/UI/Icon"
+import Nav from "@/components/UI/Nav"
 
-import './styles.sass'
+import "./styles.sass"
 
 export default () => (
-    <footer>
-        <div className="container">
-            <div className="accent-bar"></div>
+    <footer className="pb-10">
+        <div className="container grid justify-items-center gap-12">
+            <div className="accent-bar h-1 w-[100px] bg-brown"></div>
             <Nav />
             <p className="description about">
                 Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers 
