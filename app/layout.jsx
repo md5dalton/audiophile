@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
     
     
     return (
-        <html lang="en">
-            <body id="app" className={`${font.className}`}>
+        <html lang="en" className={`${font.className}`}>
+            <body className="flex flex-col min-h-screen">
                 <ModalProvider>
                     {children}
                     <aside>
