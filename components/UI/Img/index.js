@@ -1,0 +1,1 @@
+export default ({ src, alt="", ...props }) => <img alt={alt} src={`/assets/${src}`} {...props} />

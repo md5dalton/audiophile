@@ -1,0 +1,29 @@
+@use "styles/util" as *
+
+.form-main .field 
+    .title, .input-wrapper
+        transition: .3s
+    
+    &.error
+        .title
+            color: var(--color-error)
+        
+        .input-wrapper
+            border-color: var(--color-error)
+            border-width: 3px
+
+    .title
+        display: flex
+        justify-content: space-between
+        margin-bottom: 16px
+
+    .error-msg
+        font-weight: initial
+
+    @include tablet
+        &.wide
+            grid-column: 1 / -1
+
+        &.radios
+            display: grid
+            grid-template-columns: 1fr 1fr 

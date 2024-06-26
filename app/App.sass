@@ -1,0 +1,83 @@
+@use 'styles/globals' as *
+@use 'styles/util' as *
+
+#app
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
+    main
+        flex-grow: 1
+
+    header, footer
+        background-color: var(--color-light-black)
+        background-blend-mode: difference
+
+    section, .container
+        @include container-a
+        @include center-text
+
+    .page
+        display: grid
+        row-gap: 7.5rem
+        padding-bottom: 7.5rem
+
+    .modal > *
+        display: grid
+
+.button
+    display: grid
+    place-items: center
+    min-height: 48px
+    min-width: 160px
+    width: fit-content
+    transition: .3s
+    color: var(--color-text)
+    background-color: var(--color-primary)
+    
+    &:hover
+        background-color: var(--color-button-hover)
+
+    &.secondary
+        background-color: transparent
+        color: var(--color-text-dark)
+        border: solid 1.6px var(--color-black)
+
+        &:hover
+            background-color: var(--color-black)
+            color: var(--color-text)
+
+    &.text, &.terciary
+        color: var(--color-text-grey)
+
+    &.terciary
+        background-color: transparent
+        grid-template-columns: auto 8px
+        justify-content: center
+        gap: 13px
+
+        &:hover
+            color: var(--color-primary)
+
+    &.text
+        background-color: transparent
+        text-transform: capitalize
+        justify-content: flex-start
+
+        &:hover
+            color: var(--color-primary)
+
+@include tablet
+    #app
+        .page
+            row-gap: 6rem
+            padding-bottom: 6rem
+
+@include desktop
+    #app
+        section, .container
+            text-align: initial
+
+        .page
+            row-gap: 10.5rem
+            padding-bottom: 200px

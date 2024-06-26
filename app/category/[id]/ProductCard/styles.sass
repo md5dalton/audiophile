@@ -1,0 +1,13 @@
+@use "styles/util" as *
+
+.category .product-card
+
+    @include desktop
+        grid-template-columns: 1fr 1fr
+
+        &:nth-child(even) .details
+            order: -1
+
+        picture
+            width: 540px
+            
