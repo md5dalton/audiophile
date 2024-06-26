@@ -17,7 +17,7 @@ export default ({ children, ...props }) => {
         <header {...props}>
             <div className="toolbar">
                 <Button className="menu-toggle" onClick={() => toggleSidedrawer()}><Icon name="hamburger" /></Button>
-                <Nav />
+                <Nav className="flex" />
                 <Button className="cart-toggler" onClick={() => toggleCart()}>
                     <Icon name="cart" />
                     {cart.value.length > 0 && <span className="cart-count">{cart.value.length}</span>}
