@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { clearCart } from "@/signals/cart"
+import { useCart } from "@/context/CartContext"
 
 import Icon from "@/components/UI/Icon"
 import Modal from "@/components/UI/Modal"
@@ -12,6 +12,7 @@ import "./styles.sass"
 
 export default ({ isOpen, toggleHandler, grandTotal }) => {
 
+    const { clearCart } = useCart()
     const router = useRouter()
 
     const handler = () => {
