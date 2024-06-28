@@ -1,5 +1,7 @@
+"use client"
+
 import { getProducts } from "@/Functions"
-import { cart, totalPrice } from "@/signals/cart"
+import { useCart } from "@/context/CartContext"
 
 import List from "@/components/UI/List"
 import ProductRowQauntity from "@/components/UI/ProductRowQauntity"
@@ -10,9 +12,11 @@ import "./styles.sass"
 
 export default () => {
     
-    const products = getProducts(cart.value)
+    const { cart, getTotalPrice } = useCart()
 
-    const tPrice= totalPrice()
+    const products = getProducts(cart)
+
+    const tPrice= getTotalPrice()
     const shipping = 50
     const VAT = 1.2 * tPrice
     const grandTotal = shipping + VAT
