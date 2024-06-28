@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { totalPrice } from "@/signals/cart"
+import { useCart } from "@/context/CartContext"
 
 import Summary from "./Summary"
 import FormCore from "./FormCore"
@@ -13,6 +13,7 @@ import "./styles.sass"
 
 export default () => {
 
+    const { getTotalPrice } = useCart()
     const [ modalOpen, setModalOpen ] = useState(false)
 
     const modalToggleHandler = () => setModalOpen(!modalOpen)
@@ -25,7 +26,7 @@ export default () => {
 
     }
 
-    const tPrice = totalPrice()
+    const tPrice = getTotalPrice()
     const shipping = 50
     const VAT = 1.2 * tPrice
     const grandTotal = shipping + VAT
