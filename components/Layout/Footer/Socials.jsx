@@ -1,4 +1,4 @@
-import SVG from "@/components/SVG"
+import SVG from "@/components/UI/SVG"
 import { facebook, instagram, twitter } from "@/utils/icons"
 
 export default () => (
