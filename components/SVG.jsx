@@ -7,7 +7,7 @@ export default ({ path }) => (
             <path 
                 d={path}
                 fill="#FFF"
-                fill-rule="nonzero"
+                fillRule="nonzero"
             />
     </svg>
 )
