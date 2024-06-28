@@ -3,7 +3,7 @@
 import { getProducts } from "@/Functions"
 import { useModal } from "@/context/Modal"
 import { useRouter } from "next/navigation"
-import { cart, clearCart, totalPrice } from "@/signals/cart"
+import { useCart } from "@/context/CartContext"
 
 import ProductRow from "./ProductRow"
 import List from "@/components/UI/List"
@@ -17,8 +17,10 @@ export default () => {
 
     const { cart: cartIsOpen, toggleCart } = useModal()
 
+    const { cart, clearCart, getTotalPrice } = useCart()
+
     const router = useRouter()
-    const products = getProducts(cart.value)
+    const products = getProducts(cart)
 
     const handler = () => {
 
@@ -48,7 +50,7 @@ export default () => {
                                     itemHandler={(item, index) => <ProductRow key={index} {...item} />}
                                 />
                                 <div className="total-price">
-                                    <PriceRow name="total" value={totalPrice()} />
+                                    <PriceRow name="total" value={getTotalPrice()} />
                                 </div>
                             </>
                             :
