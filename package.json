@@ -18,6 +18,7 @@
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "@preact/signals-react": "^2.0.2",
     "next": "^14.2.4"
   }
