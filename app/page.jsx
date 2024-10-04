@@ -12,7 +12,12 @@ export default () => {
 
     return (
         <>
-            <Header className={name}>
+            <Header
+                className="bg-cover bg-no-repeat"
+                style={{
+                    backgroundImage: "url(/assets/home/mobile/image-header.jpg)"
+                }}
+            >
                 <section className="hero">
                     <div className="overline">New product</div>
                     <h1 className="name">XX99 Mark II Headphones</h1>
