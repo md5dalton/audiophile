@@ -13,10 +13,7 @@ export default () => {
     return (
         <>
             <Header
-                className="bg-cover bg-no-repeat"
-                style={{
-                    backgroundImage: "url(/assets/home/mobile/image-header.jpg)"
-                }}
+                className="bg-cover bg-no-repeat bg-header-mobile md:bg-header-tablet lg:bg-header-desktop"
             >
                 <section className="hero">
                     <div className="overline">New product</div>
