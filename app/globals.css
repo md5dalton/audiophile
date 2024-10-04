@@ -3,32 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --font-size-xs: .75rem;
-  --font-size-sm: .875rem;
-  --font-size-base: 1rem;
-  --font-size-2xl: 1.5rem;
+    --font-size-xs: .75rem;
+    --font-size-sm: .875rem;
+    --font-size-base: 1rem;
+    --font-size-2xl: 1.5rem;
 
-  --bg-nav: url('/bg/bg-sidebar-mobile.svg')
+    --bg-nav: url('/bg/bg-sidebar-mobile.svg')
 }
 
 html {
-  scrollbar-width: none;
+    scrollbar-width: none;
 }
 
 @media (min-width: 768px) {
-  :root {
-    --font-size-xs: .875rem;
-    --font-size-sm: .875rem;
-    --font-size-base: 1rem;
-    --font-size-2xl: 2rem;
-  }
+    :root {
+        --font-size-xs: .875rem;
+        --font-size-sm: .875rem;
+        --font-size-base: 1rem;
+        --font-size-2xl: 2rem;
+    }
 }
 
-/* @layer components {
-  .input {
-      @apply 
-          bg-transparent pb-4 px-4 outline-none 
-          border-b-[1px] border-b-light-grey
-          focus:border-b-light-green
-  }
-} */
+.page-w {
+    @apply max-w-[1110px] mx-auto px-6 md:px-10 lg:px-0
+}
