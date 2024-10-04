@@ -17,9 +17,7 @@ export default ({ params: { id } }) => {
     return (
         <>
             <Header className={name}>
-                <section>
-                    <h4 className="category-title">{id}</h4>
-                </section>
+                <h4 className="py-8 uppercase text-center md:py-24">{id}</h4>
             </Header>
             <main className={`page ${name}`}>
                 <section className="products">
