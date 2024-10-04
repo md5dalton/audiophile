@@ -1,17 +1,13 @@
 "use client"
 
-// import Button from "@/components/UI/Button"
-import Icon from "@/components/UI/Icon"
 import Nav from "@/components/UI/Nav"
-
+import ButtonIcon from "@/components/ButtonIcon"
 import { useModal } from '@/context/Modal'
 import { useCart } from '@/context/CartContext'
-
 import { Bars3Icon, ShoppingCartIcon } from "@heroicons/react/24/outline"
 
+
 import "./styles.sass"
-import Button from "@/components/Button"
-import ButtonIcon from "@/components/ButtonIcon"
 
 export default ({ children, ...props }) => {
     
@@ -30,7 +26,11 @@ export default ({ children, ...props }) => {
                     onClick={toggleCart}
                 >
                     <ShoppingCartIcon height={24} className="row-span-full col-span-full" />
-                    <span className="row-span-full col-span-full grid place-content-center bg-brown h-5 w-5 rounded-full translate-x-4 -translate-y-4">{cart.length}</span>
+                    {
+                        cart.length > 0 && 
+                        <span
+                            className="row-span-full col-span-full grid place-content-center bg-brown h-5 w-5 rounded-full translate-x-4 -translate-y-4 font-bold"
+                        >{cart.length}</span>}
                 </ButtonIcon>
             </div>
             <div className="page-w text-center border-t-grey border-t-[1px]">
